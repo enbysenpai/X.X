@@ -1,0 +1,106 @@
+--- MASTER PROGRAMS ---
+
+Master: Artificial Intelligence and Optimization (MIAO)
+Year: 1
+Schedule Link: https://edu.info.uaic.ro/orar/participanti/orar_MIAO1.html
+
+[COURSES]
+Monday:
+- Data Mining - Lab - 16:00-18:00 Professor: Prof. dr. Breabăn Mihaela AND Asist. drd. Cornei Laura room: C413
+- Advanced Topics in Computer Vision - Lab - 18:00-20:00 Professor: Colab. dr. Timofte Radu room: C2
+
+Tuesday:
+- Software Quality - Course - 12:00–14:00 Professor: Lect.dr. Rădulescu Vlad room: C308
+- Concurrent and Distributed Programming - Course - 16:00–18:00 Professor: Prof. dr. Alboaie Lenuța room: C309
+- Concurrent and Distributed Programming - Lab - 18:00–20:00 Professor: Prof. dr. Alboaie Lenuța room: C308
+
+Wednesday:
+- Pragmatic Aspects in Engineering of Cloud Systems - Course - 08:00–10:00 Professor: Lect.dr. Rădulescu Vlad room: Amazon Iași
+- Software Quality - Lab - 12:00–14:00 Professor: Lect.dr. Rădulescu Vlad room: C405
+- Advanced Topics of Machine Learning - Course - 16:00-18:00 Professor: Conf. dr. Ciortuz Liviu room: C309
+- Advanced Topics of Machine Learning - Lab - 18:00–20:00 Professor: Conf. dr. Ciortuz Liviu room: 309
+
+Thursday:
+- Pragmatic Aspects in Engineering of Cloud Systems - Lab - 08:00–10:00 Professor: Prof. dr. Luchian Henri room: Amazon Iași
+- Data Mining - Course - 12:00-14:00 Professor: Prof. dr. Luchian Henri room: C308
+- Event-Based Systems - Course - 16:00-18:00 Professor: Conf. dr. Onica Emanuel room: C309
+- Event-Based Systems - Lab - 18:00-20:00 Professor: Conf. dr. Onica Emanuel room: C309
+
+Friday:
+- Experimental Analysis of Algorithms - Lab - 08:00–10:00 Professor: Conf. dr. Răschip Mădălina room: C308
+- Experimental Analysis of Algorithms - Course - 10:00–12:00 Professor: Conf. dr. Răschip Mădălina room: C309
+
+Saturday:
+- Advanced Topics in Computer Vision - Course - 9:00-15:00 - 01.03.2025 Professor: Colab. dr. Timofte Radu room: Online
+- Advanced Topics in Computer Vision - Course - 9:00-15:00 - 15.03.2025 Professor: Colab. dr. Timofte Radu room: Online
+- Advanced Topics in Computer Vision - Course - 9:00-15:00 - 05.04.2025 Professor: Colab. dr. Timofte Radu room: Online
+- Advanced Topics in Computer Vision - Course - 9:00-15:00 - 03.05.2025 Professor: Colab. dr. Timofte Radu room: Online
+- Advanced Topics in Computer Vision - Course - 9:00-13:00 - 17.05.2025 Professor: Colab. dr. Timofte Radu room: Online
+
+---
+
+Master: Artificial Intelligence and Optimization (MIAO)
+Year: 2
+Schedule Link: https://edu.info.uaic.ro/orar/participanti/orar_MIAO2.html
+
+[COURSES]
+Monday:
+- Ethics and academic integrity - Course - 18:00–20:00 - Odd weeks Professor: Conf. dr. Trandabăț Diana room: C112
+
+Tuesday:
+- Professional/Research Practice - Lab - 08:00–10:00 - Odd weeks Professor: Prof. dr. Breabăn Mihaela
+- Professional/Research Practice - Lab - 18:00-20:00 - Even weeks Professor: Prof. dr. Breabăn Mihaela
+
+---
+
+Master: Computational Linguistics (MLC)
+Year: 1
+Schedule Link: https://edu.info.uaic.ro/orar/participanti/orar_MLC1.html
+
+[COURSES]
+Monday:
+- Data Mining - Lab - 18:00-20:00 Professor: Prof. dr. Breabăn Mihaela AND Asist. drd. Cornei Laura room: C413
+
+Tuesday:
+- Dialog system and virtual assistants - Course - 8:00-10:00 Professor: Lect. dr. Pistol Ionuț Cristian room: C409
+- Dialog system and virtual assistants - Lab - 10:00-12:00 Professor: Lect. dr. Pistol Ionuț Cristian room: C409
+
+Wednesday:
+- Script Languages - Lab - 8:00-10:00 Professor: CS II Dr. Gifu Daniela AND Conf. dr. Trandabăț Diana room: R201
+
+Thursday:
+- Statistical natural language processing - Lab - 8:00-10:00 Professor: CS II Dr. Gifu Daniela room: C413
+- Statistical natural language processing - Course - 10:00-12:00 Professor: Conf. dr. Trandabăț Diana room: C403
+- Data Mining - Course - 12:00-14:00 Professor: Prof. dr. Luchian Henri room: C308
+- Speech processing and fuzzy systems - Course - 14:00-16:00 Professor: Prof. dr. Teodorescu Horia room: C112
+- Speech processing and fuzzy systems - Lab - 16:00-18:00 Professor: Prof. dr. Teodorescu Horia room: C901
+
+Friday:
+- Script Languages - Course - 8:00-10:00 Professor: Conf. dr. Trandabăț Diana room: R201
+
+
+--- SHARED COURSES ---
+* Data Mining Course:
+  - Programs: Artificial Intelligence and Optimization (year 1) AND Computational Linguistics (year 1)
+  - Schedule: Thursday 12:00-14:00
+  - Professor: Prof. dr. Luchian Henri
+  - Room: C308
+
+
+--- ACADEMIC STAFF ---
+More information link: https://www.info.uaic.ro/personal-academic
+Name: Prof. Dr. Lenuța Alboaie office: C310 email: adria@info.uaic.ro website: https://profs.info.uaic.ro/~adria
+Name: C.S. II Dr. Bogdan Aman email: bogdan.aman@info.uaic.ro website: https://profs.info.uaic.ro/~bogdan.aman/
+Name: Asist. Drd. Dan Gabriel Anton email: anton.dan@info.uaic.ro
+Name: Lect. Dr. Nicoleta Armanu office: C902 email: nicky@info.uaic.ro website: https://profs.info.uaic.ro/nicoleta.armanu/
+Name: Conf. Dr. Diana Trandabăț office: R201 email: dtrandabat@info.uaic.ro website: https://profs.info.uaic.ro/~dtrandabat/index.php
+
+
+--- MASTER'S PROGRAMS INFO ---
+Info Link: https://www.info.uaic.ro/en/master-studies/
+Name: Software Engineering
+More Details Link: https://www.info.uaic.ro/en/programs/software-engineering-en/
+Study Plan Link: https://cdn-1.info.uaic.ro/info-uaic-ro/planuri/2024-2025/MISS-en.pdf
+Name: Computational Linguistics
+More Details: https://www.info.uaic.ro/en/programs/computational-linguistics-en/
+Study Plan Link: https://cdn-1.info.uaic.ro/info-uaic-ro/planuri/2024-2025/MLC-en.pdf
