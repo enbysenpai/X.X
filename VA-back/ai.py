@@ -28,13 +28,11 @@ vector_store = Chroma(
     persist_directory="./university_info_db",
 )
 
-loader = TextLoader("info_chunks.txt", encoding="utf-8")
+loader = TextLoader("school_info.txt", encoding="utf-8")
 docs = loader.load()
 
-text_splitter = RecursiveCharacterTextSplitter( chunk_size=1200,
-    chunk_overlap=300,
-    separators=["\n\n---", "\n[COURSES]", "\n--- SHARED COURSES ---"],
-    keep_separator=True)
+text_splitter = RecursiveCharacterTextSplitter( chunk_size=1500,
+    chunk_overlap=800)
 all_splits = text_splitter.split_documents(docs)
 
 _ = vector_store.add_documents(documents=all_splits)
