@@ -4,12 +4,19 @@ import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import CircularProgress from '@mui/material/CircularProgress';
+import { ChevronDown, ChevronUp, BookText, Newspaper, Contact, House, Clock9, Menu, University, BanknoteArrowUp, BanknoteArrowDown, Image as ImageIcon, Music, Book } from 'lucide-react';
+import QuickQuestions from '../components/QuickQuestions';
 
 export default function Home() {
     const [userInput, setUserInput] = useState("");
     const [history, setHistory] = useState([]);
     const [loading, setLoading] = useState(false);
     const [messages, setMessages] = useState([]);
+    const [showQuickQuestions, setShowQuickQuestions] = useState(true);
+
+    const [resourcesOpen, setResourcesOpen] = useState(false);
+    const [selectedResource, setSelectedResource] = useState(null);
+    const resourcesRef = useRef(null);
 
     const messageListRef = useRef(null);
     const textAreaRef = useRef(null);
@@ -22,9 +29,33 @@ export default function Home() {
         return true;
     });
 
+  const resources = [
+    { id: 1, name: 'Schedule', icon: Clock9, url: 'https://edu.info.uaic.ro/orar/' },
+    { id: 2, name: 'Courses', icon: BookText, url: 'https://edu.info.uaic.ro/' },
+    { id: 3, name: 'News', icon: Newspaper, url: 'https://www.info.uaic.ro/noutati/' },
+    { id: 4, name: 'Contact', icon: Contact, url: 'https://www.info.uaic.ro/contact/' },
+    { id: 5, name: 'Admission', icon: University, url: 'https://www.info.uaic.ro/admitere/' },
+    { id: 6, name: 'Scolarship', icon: BanknoteArrowUp, url: 'https://www.uaic.ro/studenti/burse/' },
+    { id: 7, name: 'Taxes', icon: BanknoteArrowDown, url: 'https://plati-taxe.uaic.ro/' },
+    { id: 8, name: 'Housing', icon: House, url: 'https://www.uaic.ro/studenti/cazare/' }
+  ];
+
   const [audioUrl, setAudioUrl] = useState(null);
   const mediaRecorderRef = useRef(null);
   const recordInterval = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+        if (resourcesRef.current && !resourcesRef.current.contains(event.target)) {
+            setResourcesOpen(false);
+        }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [resourcesRef]);
 
   useEffect(() => {
     const messageList = messageListRef.current;
@@ -72,7 +103,7 @@ export default function Home() {
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        if(e) e.preventDefault();
 
         if (userInput.trim() === "") {
             return;
@@ -81,7 +112,9 @@ export default function Home() {
         setLoading(true);
         setMessages((prevMessages) => [...prevMessages, { "message": userInput, "type": "userMessage" }]);
 
-        const response = await fetch("http://localhost:5000/api/post_question", {
+        setShowQuickQuestions(false);
+
+        const response = await fetch("http://localhost:3000/api/post_question", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -113,6 +146,46 @@ export default function Home() {
     setLoading(false);
   };
 
+  const handleQuickQuestionClick = async (question) => {
+    setShowQuickQuestions(false);
+    
+    // Add the question to messages immediately as a user message
+    setMessages((prevMessages) => [...prevMessages, { "message": question, "type": "userMessage" }]);
+    
+    // Show loading state
+    setLoading(true);
+    
+    // Send the question to the backend
+    try {
+      const response = await fetch("http://localhost:3000/api/post_question", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ question: question }),
+      });
+      
+      if (!response.ok) {
+        handleError();
+        return;
+      }
+      
+      const data = await response.json();
+      
+      if (data.error) {
+        handleError();
+        return;
+      }
+      
+      // Add the response to messages
+      setMessages((prevMessages) => [...prevMessages, { "message": data.answer, "type": "apiMessage" }]);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error sending quick question:", error);
+      handleError();
+    }
+  };
+   
     const handleEnter = (e) => {
         if (e.key === "Enter" && userInput) {
             if (!e.shiftKey && userInput) {
@@ -123,14 +196,21 @@ export default function Home() {
         }
     };
 
-  // Keep history in sync with messages
+  const handleResourceSelect = (resource) => {
+    // setSelectedResource(resource);
+    setResourcesOpen(false);
+
+    if(resource.url) {
+      window.open(resource.url, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   useEffect(() => {
     if (messages.length >= 3) {
       setHistory([[messages[messages.length - 2].message, messages[messages.length - 1].message]]);
     }
   }, [messages]);
 
-  // Clean up on unmount
   useEffect(() => {
     return () => {
       if (mediaRecorderRef.current) {
@@ -142,7 +222,6 @@ export default function Home() {
 
   const handleRecord = async () => {
     if (isRecording) {
-        // Stop recording
         mediaRecorderRef.current?.stop();
         clearInterval(recordInterval.current);
         setIsRecording(false);
@@ -169,6 +248,8 @@ export default function Home() {
                 "type": "userMessage",
                 "isAudio": true
             }]);
+
+            setShowQuickQuestions(false);
             
             // Clean up
             stream.getTracks().forEach(track => track.stop());
@@ -206,9 +287,38 @@ export default function Home() {
       </Head>
       <div className={isDarkMode ? styles.dark : styles.light}>
         <div className={styles.topnav}>
-          <div className = {styles.navlogo}>
-            <a href="/">FiiHelp</a>
-          </div>
+            <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0 1rem 0 0' }}>
+                <Image src="/logo.png" alt="UAIC Logo" width={48} height={48} />
+            </a>
+          <div className={styles.resourcesContainer} ref={resourcesRef}>
+              <button 
+                onClick={() => setResourcesOpen(!resourcesOpen)}
+                className={styles.resourcesButton}
+              >
+                <Menu />
+              </button>
+              
+              {resourcesOpen && (
+                <div className={styles.resourcesDropdown}>
+                  <ul>
+                    {resources.map((resource) => {
+                      const IconComponent = resource.icon;
+                      return (
+                        <li key={resource.id}>
+                          <button 
+                            onClick={() => handleResourceSelect(resource)}
+                            className={styles.resourceItem}
+                          >
+                            {IconComponent && <IconComponent size={16} className={styles.resourceIcon} />}
+                            <span>{resource.name}</span>
+                          </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
+            </div>
           <div className = {styles.navlinks}>
             <label className={styles["theme-toggle"]}>
                               <input
@@ -223,8 +333,8 @@ export default function Home() {
                                   }}
                               />
                               <span className={styles.slider}>
-        <span className={`${styles.icon} ${styles.sun}`}>☀️</span>
-        <span className={`${styles.icon} ${styles.moon}`}>🌙</span>
+        <span className={`${styles.icon} ${styles.sun}`}>🌙</span>
+        <span className={`${styles.icon} ${styles.moon}`}>☀️</span>
       </span>
                           </label>
           </div>
@@ -232,6 +342,11 @@ export default function Home() {
         <main className={styles.main}>
           <div className = {styles.cloud}>
             <div ref={messageListRef} className = {styles.messagelist}>
+              {messages.length === 0 && showQuickQuestions && (
+                <div className={styles.quickQuestionsContainer}>
+                  <QuickQuestions onQuestionClick={handleQuickQuestionClick} />
+                </div>
+              )}
               {messages.map((message, index) => (
             // The latest message sent by the user will be animated while waiting for a response
             <div
