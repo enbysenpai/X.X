@@ -147,7 +147,7 @@ export default function Home() {
 
         setShowQuickQuestions(false);
 
-        const response = await fetch("http://localhost:3000/api/post_question", {
+        const response = await fetch("http://localhost:5000/api/post_question", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -190,7 +190,7 @@ export default function Home() {
     
     // Send the question to the backend
     try {
-      const response = await fetch("http://localhost:3000/api/post_question", {
+      const response = await fetch("http://localhost:5000/api/post_question", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
