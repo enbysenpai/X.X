@@ -135,7 +135,7 @@ export default function Home() {
   }, [messages]);
 
     useEffect(() => {
-        textAreaRef.current.focus();
+        if(textAreaRef.current) textAreaRef.current.focus();
     }, [messages]);
 
     useEffect(() => {
@@ -184,7 +184,7 @@ export default function Home() {
         setLoading(true);
         setMessages((prevMessages) => [...prevMessages, { "message": userInput, "type": "userMessage" }]);
 
-        const response = await fetch("http://localhost:5000/api/post_question", {
+        const response = await fetch("http://localhost:3000/api/post_question", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -218,7 +218,7 @@ export default function Home() {
         
         // Send the question to the backend
         try {
-          const response = await fetch("http://localhost:5000/api/post_question", {
+          const response = await fetch("http://localhost:3000/api/post_question", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -424,7 +424,7 @@ export default function Home() {
                     <p>Your virtual assistant for all questions related to the Faculty of Computer Science (FII). 
                     Get instant answers about admissions, academic programs, student services, and more.</p>
                   </div>
-                            <div className={styles.center}>
+                  <div className={styles.center}>
             <div className={styles.cloudform}>
               <form onSubmit={handleSubmit} className={styles.inputArea}>
                 <div className={styles.inputWrap}>
@@ -479,7 +479,6 @@ export default function Home() {
               )}
             </div>
           </div>
-                  
                   <div className={styles.categoriesContainer}>
                     {CATEGORIES.map((category) => (
                       <div 
@@ -534,7 +533,64 @@ export default function Home() {
                 ))
               )}
             </div>
-          </div>
+          </div>     
+          {messages.length > 0 && (
+          <div className={styles.center}>
+            <div className={styles.cloudform}>
+              <form onSubmit={handleSubmit} className={styles.inputArea}>
+                <div className={styles.inputWrap}>
+                  <textarea
+                    disabled={loading}
+                    onKeyDown={handleEnter}
+                    ref={textAreaRef}
+                    rows={1}
+                    onInput={handleInput}
+                    type="text"
+                    id="userInput"
+                    name="userInput"
+                    placeholder={loading ? "Waiting for response..." : "Type your question..."}
+                    value={userInput}
+                    onChange={(e) => setUserInput(e.target.value)}
+                    className={styles.textarea}
+                  />
+
+                  <button
+                    type="button"
+                    disabled={loading}
+                    onClick={handleRecord}
+                    className={styles.recordButton}
+                  >
+                    {isRecording ? "⏹ Stop" : "🎤 Record"}
+                  </button>
+
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className={styles.generatebutton}
+                  >
+                    {loading ? (
+                      <div className={styles.loadingwheel}>
+                        <CircularProgress color="inherit" size={20}/>
+                      </div>
+                    ) : (
+                      <svg viewBox="0 0 20 20" className={styles.svgicon}
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
+                      </svg>
+                    )}
+                  </button>
+                </div>
+              </form>
+              {isRecording && (
+                <div className={styles.recordingIndicator}>
+                  <div className={styles.recordingDot}></div>
+                  ⏱️ Recording: {recordTime}s
+                </div>
+              )}
+            </div>
+          </div>  
+          )}                     
         </main>
       </div>
     </>
