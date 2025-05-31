@@ -1,258 +1,257 @@
 --- ACADEMIC STAFF ---
 More information link: https://www.info.uaic.ro/personal-academic
 
-[Dr. Lenuța Alboaie, Profesor universitar]
+[Dr. Lenuța Alboaie], Profesor universitar
 - Office: Building C, Office C310
 - Web Address: https://profs.info.uaic.ro/~adria
 - Email: adria@info.uaic.ro
 
-[Dr. Bogdan Aman, C.S. II]
+[Dr. Bogdan Aman], C.S. II
 - Web Address: https://profs.info.uaic.ro/~bogdan.aman/
 - Email: bogdan.aman@info.uaic.ro
 - Fields of interest: Membrane Computing, Process Algebra, Petri Nets, Formal Languages, Automata Theory
 
-[Drd. Dan Gabriel Anton, Asistent universitar]
+[Drd. Dan Gabriel Anton], Asistent universitar
 - Email: anton.dan@info.uaic.ro
 
-[Dr. Nicoleta Armanu, Lector universitar]
+[Dr. Nicoleta Armanu], Lector universitar
 - Office: Building C, Office C902
 - Web Address: https://profs.info.uaic.ro/~nicky
 - Email: nicky@info.uaic.ro
 
-[Dr. Andreea Arusoaie, Conferențiar universitar]
+[Dr. Andreea Arusoaie], Conferențiar universitar
 - Office: Building C, Office C307
 - Web Address: http://profs.info.uaic.ro/~andreea.arusoaie
 - Email: andreea.arusoaie@info.uaic.ro
 - Fields of interest: Mathematical Modelling, Numerical Analysis, Dynamical Systems, Astronomy
 
-[Dr. Andrei Arusoaie, Conferențiar universitar]
+[Dr. Andrei Arusoaie], Conferențiar universitar
 - Office: Building C, Office C414
 - Web Address: https://profs.info.uaic.ro/~arusoaie.andrei/
 - Email: arusoaie.andrei@info.uaic.ro
 - Fields of interest: Programming Languages, Logics, Verification of programs, Functional Programming
 
-[Dr. Mihai-Răzvan Benchea, Lector universitar]
+[Dr. Mihai-Răzvan Benchea], Lector universitar
 - Office: Building C, Office C213
 - Web Address: https://profs.info.uaic.ro/~rbenchea
 - Email: rbenchea@info.uaic.ro
 - Fields of interest: Machine Learning, Neural Networks, Object-Oriented Programming
 
-[Dr. Mihaela Elena Breabăn, Conferențiar universitar]
+[Dr. Mihaela Elena Breabăn], Conferențiar universitar
 - Office: Building C, Office C416
 - Web Address: https://profs.info.uaic.ro/~pmihaela
 - Email: pmihaela@info.uaic.ro
 
-[Dr. Sabin Corneliu Buraga, Profesor universitar]
+[Dr. Sabin Corneliu Buraga], Profesor universitar
 - Office: Building C, Office C303
 - Web Address: https://profs.info.uaic.ro/~busaco/
 - Email: busaco@info.uaic.ro
 - Fields of interest: (Semantic) Web Technologies, Human-Computer Interaction
 
-[Dr. Cătălin Bîrjoveanu, Lector universitar]
+[Dr. Cătălin Bîrjoveanu], Lector universitar
 - Office: Building C, Office C904
 - Web Address: https://profs.info.uaic.ro/~cbirjoveanu/
 - Email: cbirjoveanu@info.uaic.ro
 - Fields of interest: Electronic Commerce Security, Digital Cash and Payment Systems, Anonymity and Privacy, Security Protocols, Applied Cryptography, Smart Cards, Security Verification and Validation
 
-[Drd. Cristina Georgiana Calancea, Asistent universitar]
+[Drd. Cristina Georgiana Calancea], Asistent universitar
 - Office: Building C, Office 310
 - Web Address: https://profs.info.uaic.ro/~gcalancea/
 - Email: gcalancea@info.uaic.ro
 - Fields of interest: Cloud Computing, Computer Networks, Web Technologies, Distributed Systems
 
-[Dr. Oana Captarencu, Lector universitar]
+[Dr. Oana Captarencu], Lector universitar
 - Office: Building C, Office C211
 - Web Address: https://profs.info.uaic.ro/~otto
 - Email: otto@info.uaic.ro
 
-[Dr. Gabriel Ciobanu, C.S. I]
+[Dr. Gabriel Ciobanu], C.S. I
 - Web Address: https://profs.info.uaic.ro/~gabriel/
 - Email: gabriel@info.uaic.ro
 - Fields of interest: Formal Methods for Distributed and Concurrent Systems, Membrane Systems (Natural Computing), Bridging Membrane Computing and Process Calculi, Foundations of Mathematics and Computer Science: Finitely Supported Mathematics
 
-[Dr. Ștefan Ciobâcă, Conferențiar universitar]
+[Dr. Ștefan Ciobâcă], Conferențiar universitar
 - Office: Building C, Office C508
 - Web Address: https://profs.info.uaic.ro/~stefan.ciobaca
 - Email: stefan.ciobaca@info.uaic.ro
 - Fields of interest: Formal Methods, Logics, Security, Algorithms
 
-[Dr. Liviu Ciortuz, Conferențiar universitar]
+[Dr. Liviu Ciortuz], Conferențiar universitar
 - Office: Building C, Office C213 AND Building R, Office R206
 - Web Address: https://profs.info.uaic.ro/~ciortuz
 - Email: ciortuz@info.uaic.ro
 
-[Drd. Georgiana Coca, Asistent universitar]
+[Drd. Georgiana Coca], Asistent universitar
 - Email: georgiana.coca@info.uaic.ro
 
-[Dr. Rodica Condurache, Lector universitar]
+[Dr. Rodica Condurache], Lector universitar
 - Office: Building C, Office C211
 - Web Address: https://profs.info.uaic.ro/~rodica.condurache/
 - Email: rodica.condurache@info.uaic.ro
 - Fields of interest: Temporal Logics, the verification and synthesis of systems
 
-[Dr. Dan Cristea, Profesor universitar]
+[Dr. Dan Cristea], Profesor universitar
 - Office: Building C, Office C511
 - Web Address: https://profs.info.uaic.ro/~dcristea
 - Email: dcristea@info.uaic.ro
 
-[Dr. Eugen Nicolae Croitoru, Lector universitar]
+[Dr. Eugen Nicolae Croitoru], Lector universitar
 
-[Drd. Ciprian Cușmuliuc, Asistent universitar]
+[Drd. Ciprian Cușmuliuc], Asistent universitar
 - Email: gabriel.cusmuliuc@info.uaic.ro
 
-[Dr. Paul Diac, Lector universitar]
+[Dr. Paul Diac], Lector universitar
 - Office: Building C, Office C414
 - Web Address: https://profs.info.uaic.ro/~paul.diac
 - Email: paul.f.diac@gmail.com
 
-[Dr. Corina Forăscu, Conferențiar universitar]
+[Dr. Corina Forăscu], Conferențiar universitar
 - Office: Building C, Office C417
 - Web Address: https://profs.info.uaic.ro/~corinfor
 - Email: corina.forascu@gmail.com,corinfor@info.uaic.ro
 - Fields of interest: Artificial Intelligence, Computational Linguistics, Natural Language Processing, Entrepreneurship, Innovation, IoT, Smart Cities
 
-[Dr. Cristian Andrei Frăsinaru, Lector universitar]
+[Dr. Cristian Andrei Frăsinaru], Lector universitar
 - Office: Building C, Office C212
 - Web Address: https://profs.info.uaic.ro/~acf
 - Email: acf@info.uaic.ro
 
-[Dr. Cristian Gațu, Conferențiar universitar]
+[Dr. Cristian Gațu], Conferențiar universitar
 - Office: Building C, Office C212
 - Web Address: https://profs.info.uaic.ro/~cgatu
 - Email: cgatu@info.uaic.ro
 
-[Dr. Constantin Lucian Ghirvu, Lector universitar]
+[Dr. Constantin Lucian Ghirvu], Lector universitar
 - Office: Building C, Office C213
 - Web Address: https://profs.info.uaic.ro/~ghirvu
 - Email: ghirvu@info.uaic.ro
 
-[Dr. Daniela Gîfu, C.S. II]
+[Dr. Daniela Gîfu], C.S. II
 - Web Address: https://profs.info.uaic.ro/~daniela.gifu/
 - Email: daniela.gifu@info.uaic.ro
 - Fields of interest: Web of Linked Data, Machine Learning, Semantic Annotation, Text Categorization, Content Analysis, Sentiment Analysis in Social Media, Discourse Analysis, DWord Sense Disambiguation
 
-[Dr. Sorin Iftene, Lector universitar]
+[Dr. Sorin Iftene], Lector universitar
 - Office: Building C, Office C904
 - Web Address: https://profs.info.uaic.ro/~siftene/
 - Email: siftene@info.uaic.ro
 - Fields of interest: Cryptography, Computational Number Theory
 
-[Dr. Adrian Iftene, Profesor universitar]
+[Dr. Adrian Iftene], Profesor universitar
 - Office: Building C, Office C204
 - Web Address: https://profs.info.uaic.ro/~adiftene
 - Email: adiftene@info.uaic.ro
 - Fields of interest: Software Engineering. Artificial Intelligence
 
-[Dr. Anca Ignat, Conferențiar universitar]
+[Dr. Anca Ignat], Conferențiar universitar
 - Office: Building C, Office C307
 - Web Address: https://profs.info.uaic.ro/~ancai/
 - Email: ancai@info.uaic.ro
 - Fields of interest: Digital image processing, Machine Learning, Numerical Calculus
 
-[Dr. Dorel Lucanu, Profesor universitar]
+[Dr. Dorel Lucanu], Profesor universitar
 - Office: Building C, Office C507
 - Web Address: https://fmse.info.uaic.ro/member/dorel-lucanu/
 - Email: dlucanu@info.uaic.ro
 - Fields of interest: Formal methods, programming languages, software engineering, logics, rewriting
 
-[Dr. Henri Luchian, Profesor universitar]
+[Dr. Henri Luchian], Profesor universitar
 - Office: Building C, Office C304
 - Web Address: https://profs.info.uaic.ro/~hluchian
 - Email: hluchian@info.uaic.ro
 
-[Dr. Alex Mihai Moruz, Lector universitar]
+[Dr. Alex Mihai Moruz], Lector universitar
 - Office: Building C, Office C215
 - Web Address: https://profs.info.uaic.ro/~mmoruz
 - Email: mmoruz@info.uaic.ro
 
-[Dr. Anca-Maria Nica, Lector universitar]
+[Dr. Anca-Maria Nica], Lector universitar
 - Office: Building C, Office C301
 - Web Address: https://profs.info.uaic.ro/~nica.anca
 - Email: nica.anca@info.uaic.ro
 - Fields of interest: Cryptography, Number Theory, Quadratic Residues, IBE, ABE, Information Security
 
-[Dr. Emanuel Florentin Olariu, Lector universitar]
+[Dr. Emanuel Florentin Olariu], Lector universitar
 - Office: Building C, Office C212
 - Web Address: https://profs.info.uaic.ro/~olariu
 - Email: olariu@info.uaic.ro
 - Fields of interest: Optimization Theory, Operational Research, Graph Algorithms, Probability and Statistics.
 
-[Dr. Emanuel Onica, Conferențiar universitar]
+[Dr. Emanuel Onica], Conferențiar universitar
 - Office: Building C, Office C212
 - Web Address: https://profs.info.uaic.ro/~eonica/
 - Email: eonica@info.uaic.ro
 - Fields of interest: Distributed Systems, Security
 
-[Dr. Paula-Andreea Onofrei, Lector universitar]
+[Dr. Paula-Andreea Onofrei], Lector universitar
 - Office: Building C, Office C902
 - Web Address: http://www.info.uaic.ro/bin/Structure/ponofrei?language=ro
 - Email: paula.onofrei@info.uaic.ro
 - Fields of interest: English, French, C.S.I. (Centre of Interdisciplinary Studies), Augmented Reality, Literature, Arts, Applied Linguistics, Didactics
 
-[Dr. Andrei Panu, Conferențiar universitar]
+[Dr. Andrei Panu], Conferențiar universitar
 - Office: Building C, Office C310
 - Web Address: https://profs.info.uaic.ro/~andrei.panu/
 - Email: andrei.panu@info.uaic.ro
 - Fields of interest: Computer Networks, Web Technologies, Distributed Systems
 
-[Dr. Ionuț Cristian Pistol, Lector universitar]
+[Dr. Ionuț Cristian Pistol], Lector universitar
 - Office: Building C, Office C214
 - Web Address: https://profs.info.uaic.ro/~ipistol
 - Email: ipistol@info.uaic.ro
 - Fields of interest: Artificial Intelligence: AI Issues, Natural Language Processing, Machine Learning
 
-[Drd. George Popoiu, Asistent universitar]
+[Drd. George Popoiu], Asistent universitar
 - Email: popoiu.george@info.uaic.ro
 
-[Drd. Dumitru-Bogdan Prelipcean, Asistent universitar]
+[Drd. Dumitru-Bogdan Prelipcean], Asistent universitar
 - Email: dumitru.prelipcean@info.uaic.ro
 
-[Dr. Bogdan Pătruț, Lector universitar]
+[Dr. Bogdan Pătruț], Lector universitar
 - Office: Building C, Office C216
 - Web Address: https://profs.info.uaic.ro/~bogdan/
 - Email: bogdan@info.uaic.ro
 - Fields of interest: Social Media and Artificial Intelligence in Education and Political Science
 
-[Dr. Vlad Rădulescu, Lector universitar]
+[Dr. Vlad Rădulescu], Lector universitar
 - Office: Building C, Office C310
 - Web Address: https://profs.info.uaic.ro/~rvlad
 - Email: rvlad@info.uaic.ro
 
-[Dr. Mădălina Răschip, Conferențiar universitar]
+[Dr. Mădălina Răschip], Conferențiar universitar
 - Office: Building C, Office C416
 - Web Address: https://profs.info.uaic.ro/~mionita/
 - Email: mionita@info.uaic.ro
 - Fields of interest: Artificial Intelligence, Optimization, Algorithms
 
-[Dr. Ferucio Laurentiu Tiplea, Profesor universitar]
+[Dr. Ferucio Laurentiu Tiplea], Profesor universitar
 - Office: Building C, Office C301
 - Web Address: https://profs.info.uaic.ro/~fltiplea
 - Email: fltiplea@gmail.com, ferucio.tiplea@uaic.ro
 
-[Dr. Diana Trandabăț, Conferențiar universitar]
+[Dr. Diana Trandabăț], Conferențiar universitar
 - Office: Building R, Office R201
 - Web Address: https://profs.info.uaic.ro/~dtrandabat/index.php
 - Email: dtrandabat@info.uaic.ro
 - Fields of interest: natural language processing, artificial intelligence
 
-[Dr. Traian Cristian Vidraşcu, Lector universitar]
+[Dr. Traian Cristian Vidraşcu], Lector universitar
 - Office: Building C, Office C213
 - Web Address: http://www.info.uaic.ro/~vidrascu
 - Email: vidrascu@info.uaic.ro
 - Fields of interest: Modeling and verification of concurrent/distributed systems, Petri nets, Parallel and distributed computing,
 
-[Dr. Simona Elena Vârlan, Lector universitar]
+[Dr. Simona Elena Vârlan], Lector universitar
 - Web Address: https://profs.info.uaic.ro/~simona.varlan/
 
-[Dr. Nicolae Cosmin Vârlan, Lector universitar]
+[Dr. Nicolae Cosmin Vârlan], Lector universitar
 - Office: Building C, Office C211
 - Web Address: https://profs.info.uaic.ro/~vcosmin/main
 - Email: vcosmin@info.uaic.ro
 - Fields of interest: Databases, IoT
 
-[Dr. Adrian Zălinescu, Conferențiar universitar]
+[Dr. Adrian Zălinescu], Conferențiar universitar
 - Web Address: https://profs.info.uaic.ro/~adrian.zalinescu/
-
 
 --- ASSOCIATED STAFF ---
 More information link: https://www.info.uaic.ro/personal-asociat/
@@ -317,209 +316,3 @@ More information link: https://www.info.uaic.ro/personal-asociat/
 [Dr. Marius Zbancioc], Associate Professor
 
 [Mirela Țibu]
-
-
---- MASTER'S PROGRAMS INFO ---
-Info Link: https://www.info.uaic.ro/en/master-studies/
-Name: Software Engineering
-More Details Link: https://www.info.uaic.ro/en/programs/software-engineering-en/
-Study Plan Link: https://cdn-1.info.uaic.ro/info-uaic-ro/planuri/2024-2025/MISS-en.pdf
-Name: Computational Linguistics
-More Details: https://www.info.uaic.ro/en/programs/computational-linguistics-en/
-Study Plan Link: https://cdn-1.info.uaic.ro/info-uaic-ro/planuri/2024-2025/MLC-en.pdf
-
-
---- FACILITIES ---
-[Student Life]
-- The Association of Computer Science Students of Iași (ASII): organizes meetings, competitions, an online magazine, etc.
-- Participation in prestigious competitions:
-  - Imagine Cup: 1st place in Software Design (2009), 1st place in Short Film (2004)
-  - Google Summer of Code
-  - ACM Competition
-- Close collaboration between students and professors:
-  - Organizing academic events
-  - Co-authoring book chapters
-  - Attending national and international conferences
-
-[Library]
-- A subsidiary of the “Mihai Eminescu” Central University Library.
-- Collection: ~3000 volumes + various academic journals and magazines.
-- Many books were generously donated by Microsoft.
-- Location: “Al. I. Cuza” University of Iași, Building C, ground floor, Str. General Berthelot, no. 16.
-
-[Internet Access]
-- Students and faculty have access to Internet services (email, FTP, Web) via the academic RoEduNet network.
-- Infrastructure:
-  - Main Linux servers
-  - Additional servers for Internet/Intranet access
-  - Access available also in the student campus
-
-[Scholarships]
-- Granted based on admission results and academic performance.
-- Top students receive special prizes annually.
-- Opportunity to study abroad for 1–2 semesters via the Socrates/ECTS program.
-- Industrial scholarships are also available from companies such as Siemens VDO.
-
----
-
-Document: Campus Canteens & Cafés
-Academic Year: 2024–2025
-
-[CANTEENS]
-- “Titu Maiorescu”
-  • Admin.: Diana-Alexandra Iacob (diana.i.iacob@uaic.ro | +40 232 20 2452)
-  • Address: Str. Titu Maiorescu 7–9, Iași
-  • Opened: Sept 1965; Modernized recently
-  • Capacity: 810 (510 main hall, 180 protocol, 120 bar-cafeteria)
-  • Access: Student ID or card; à la carte menu; affordable prices
-  • Hours:
-    – Students: Mon–Fri 11:30–18:45
-    – Staff: Mon–Fri 11:30–14:45
-
-- “Gaudeamus” & “Akademos” Restaurants
-  • Admin.: Loredana-Elena Șarbu (loredana.sarbu@uaic.ro | +40 232 20 1102 ext 3791)
-  • Gaudeamus (in Gaudeamus dorm): 122 seats; 200–250 daily
-    – Hours: Mon–Fri 11:30–14:45; Breakfast (hotel-style) 07:30–10:00
-  • Akademos (in Akademos dorm): ~110 seats; ~238 daily
-    – Hours: Breakfast only 07:30–10:00
-
-[CAFÉS]
-- “Tafrali” (Building A ground floor)
-  • Coffee, tea, pastries, sandwiches
-  • Hours: Mon–Fri 08:30–16:00
-
-- “Erasmus” (Botanical Garden hours)
-  • Hours: Mon–Fri 07:00–18:30
-
-- Student Café (Building B)
-  • Hours: Mon–Sat 07:30–19:00; Sun 07:30–15:00
-
-[TEA HOUSE]
-– Botanical Garden hours:
-  • Oct–Apr: Daily 09:00–16:30
-  • Apr–Oct: Daily 09:00–20:00
-
-[CASA UNIVERSITARILOR]
-– Daily 12:00–20:00
-
----
-
-Document: Scholarships
-Academic Year: 2024–2025
-
-[OFFICE]
-Social Problems Department
-Address: Str. Gheorghe Asachi 7 (Campus Codrescu, Dorm C12, Rooms 4 & 5)
-Phone: +40 232 201 577
-Fax: +40 232 201 578
-
-[CONTACT PERSONS]
-- Financial Administrator –  Internal 2571, roxana.rosu@uaic.ro
-- Financial Administrator – 0232 20 1577, mioara.dragomir@uaic.ro
-- Financial Administrator – 0232 20 1577, catalina.prisacariu@uaic.ro
-
-[WORKING HOURS]
-Monday–Friday: 08:00–16:00 (Lunch: 12:30–13:00)
-
-[SCHOLARSHIP CATEGORIES]
-- Academic Achievement
-  • Olympiad Excellence I/International
-  • Performance Scholarships I (BP1) & II (BP2)
-  • Scientific Performance (innovation & patents)
-  • Study Scholarships
-  • Teaching Master’s Scholarships
-  • Dual Education Scholarships
-
-- Social Support
-  • Social Scholarships
-  • Occasional Social Aid Scholarships
-
-- Other Activities
-  • Cum Laude (end-of-year maximum score)
-  • Laudamus (monthly, for extracurricular excellence)
-  • Cultural-Artistic Performance (monthly)
-  • Campus Social Activities (volunteer work)
-  • Sports Performance (monthly)
-  • Study Mobility (ERASMUS+, national/international)
-
-[AMOUNTS & ELIGIBILITY HIGHLIGHTS]
-- BP1: 1 050 RON/mo; BP2: 950 RON/mo
-- Scientific Performance: 1 320 RON/mo
-- Teaching Master’s & Double-specialization: ≈ net debut professor salary (3 700 RON/mo)
-- Cum Laude: one-time end-of-year award
-- Social Scholarship: 925 RON/mo
-- Occasional Aid: on-demand (clothing, maternity, bereavement)
-
-[REFERENCES]
-• Scholarship Regulations, UAIC Senate 21 Nov 2024
-• Senate Decision No. 5/21 Nov 2024
-• Social Scholarship Evaluation Norms
-
----
-
-Document: Student Accommodation
-Academic Year: 2024–2025
-
-[CAMPUSES & DORMS]
-- Titu Maiorescu (C5, C6, C7, C8)
-- Codrescu (C10, C11, C12, C13)
-- Târguşor-Copou (C1, C2, C3, C4)
-- Gaudeamus (dorm)
-- Akademos (dorm)
-- Buna Vestire (dorm)
-
-[ACCOMMODATION SCHEDULE]
-- 9 Sep: Faculties submit eligible-student counts & special-case lists
-- 13 Sep: First allocations to faculties
-- 20 Sep 16:00: Lists posted (“T1”)
-- 23–25 Sep: Issue accommodation orders; final move-in by 25 Sep 12:00
-- 25 Sep 12:00: Cancel unclaimed orders; report vacancies
-- 25 Sep 16:00: Lists posted (“T2”)
-- 26–28 Sep: Second round orders; cancellations & vacancy reports each afternoon
-- 30 Sep–1 Oct: Third round; as above (“T4”)
-- 2–11 Oct: Daily 10:00 postings; same-day validity until 16:00
-- From 14 Oct 08:00: Open applications to DCC (email: cazare@uaic.ro)
-
-[ROOM RATES 2024–2025 (RON/bed/mo)]
-| Dorms       | Budgeted RO/UE | Erasmus & Fee-paying     |
-|-------------|---------------:|-------------------------:|
-| C4,C6,C7,C8 |            150 |                      300 |
-| C10,C12,C13 |            150 |                      300 |
-| C11         |            221 |                      371 |
-| C1 (2-bed)  |            358 |                      508 |
-| C1 (3-bed)  |            325 |                      475 |
-| …           |             …  |                       …  |
-| Gaudeamus   |            572 |                      722 |
-| Akademos    |            650 |                      800 |
-| Buna Vestire|            572 |                      722 |
-
-[PAYMENT METHODS]
-- In-person (cash/card) at campus cash desks
-- Bank transfer to: RO68 TREZ 4062 0F33 1400 XXXX
-- Online: https://plati-taxe.uaic.ro/camin/
-- BRD branches: RO37 BRDE 240 SV89 5341 02400
-
-[REQUIRED DOCUMENTS]
-- Accommodation order
-- Accommodation contract (2 copies)
-- Dorm ID card
-- Passport-style photo
-- Residence-permit application (if needed)
-- ID copies (Romanian/foreign)
-- Marriage/birth certificates (family cases)
-- Proof of payment
-- Bank statement (Moldovan first-year)
-
-[ELIGIBILITY & PRIORITY]
-- Full-time students without Iași domicile, ranked by previous-year credits
-- First-years by admission average
-- Special priority: orphans, special-protection, severe-medical, families with children
-
-[DISCOUNTS & EXEMPTIONS]
-Eligible groups (up to dorm C13):
-- Children of teaching staff
-- Orphans (≤ 26 yrs)
-- Single-parent families (≤ 26 yrs)
-- Special-protection wards
-- Students with disabilities (+ companion)
-- Foreign scholarship-holders
