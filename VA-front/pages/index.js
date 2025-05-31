@@ -5,6 +5,16 @@ import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import CircularProgress from '@mui/material/CircularProgress';
 import { ChevronDown, ChevronUp, BookText, Newspaper, Contact, House, Clock9, Menu, University, BanknoteArrowUp, BanknoteArrowDown, Image as ImageIcon, Music, Book } from 'lucide-react';
+import Slider from "react-slick";
+
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true
+};
 
 const KEYWORD_URLS = [
   { phrase: "Timetable", url: "https://edu.info.uaic.ro/orar/" },
@@ -506,6 +516,111 @@ export default function Home() {
                       </div>
                     ))}
                   </div>
+                {/* <div className={styles.slideshowParent}>
+                  <div className={styles.slideshowContainer}>
+                    <div className={styles.sliderWrapper}>
+                      <Slider {...settings}>
+                      <div><img src="/BCU1.jpg" alt="Biblioteca Centrala Universitara" /></div>
+                      <div><img src="/BCU3.jpg" alt="Biblioteca Centrala Universitara" /></div>
+                      <div><img src="/GradinaBotanica1.png" alt="Gradina Botanica" /></div>
+                      <div><img src="/GradinaBotanica2.jpg" alt="Gradina Botanica" /></div>
+                      <div><img src="/GradinaBotanica4.webp" alt="Gradina Botanica" /></div>
+                      <div><img src="/GradinaBotanica6.webp" alt="Gradina Botanica" /></div>
+                      <div><img src="/GradinaBotanica7.webp" alt="Gradina Botanica" /></div>
+                      <div><img src="/GradinaBotanica8.webp" alt="Gradina Botanica" /></div>
+                      <div><img src="/GradinaBotanica9.webp" alt="Gradina Botanica" /></div>
+                      <div><img src="/informatica1.jpg" alt="Studenti" /></div>
+                      <div><img src="/informatica2.jpg" alt="Studenti" /></div>
+                      </Slider>
+                   </div>
+                  </div>
+                </div> */}
+                <div className={styles.slideshowParent}>
+                  <div className={styles.slideshowContainer}>
+                    <div className={styles.sliderWrapper}>
+                      <Slider {...settings}>
+                        <div className={styles.slide}>
+                          <img src="/BCU1.jpg" alt="Central University Library" />
+                          <div className={styles.descriptionBox}>
+                            <p>Central University Library – A historic library in Iași.</p>
+                            <a href="http://site-vechi.bcu-iasi.ro/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                          </div>
+                        </div>
+                        <div className={styles.slide}>
+                          <img src="/BCU3.jpg" alt="Central University Library" />
+                          <div className={styles.descriptionBox}>
+                            <p>Central University Library – A historic library in Iași.</p>
+                            <a href="http://site-vechi.bcu-iasi.ro/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                          </div>
+                        </div>
+                        <div className={styles.slide}>
+                          <img src="/GradinaBotanica1.png" alt="Botanical Garden Anastasie Fatu" />
+                          <div className={styles.descriptionBox}>
+                            <p>Botanical Garden Anastasie Fatu</p>
+                            <a href="https://www.botanica.uaic.ro/" target="_blank" rel="noopener noreferrer">Explore More</a>
+                          </div>
+                        </div>
+                        <div className={styles.slide}>
+                          <img src="/GradinaBotanica2.jpg" alt="Botanical Garden Anastasie Fatu" />
+                          <div className={styles.descriptionBox}>
+                            <p>Botanical Garden Anastasie Fatu</p>
+                            <a href="https://www.botanica.uaic.ro/" target="_blank" rel="noopener noreferrer">Explore More</a>
+                          </div>
+                        </div>
+                        <div className={styles.slide}>
+                          <img src="/GradinaBotanica4.webp" alt="Botanical Garden Anastasie Fatu" />
+                          <div className={styles.descriptionBox}>
+                            <p>Botanical Garden Anastasie Fatu</p>
+                            <a href="https://www.botanica.uaic.ro/" target="_blank" rel="noopener noreferrer">Explore More</a>
+                          </div>
+                        </div>
+                         <div className={styles.slide}>
+                          <img src="/GradinaBotanica6.webp" alt="Botanical Garden Anastasie Fatu" />
+                          <div className={styles.descriptionBox}>
+                            <p>Botanical Garden Anastasie Fatu</p>
+                            <a href="https://www.botanica.uaic.ro/" target="_blank" rel="noopener noreferrer">Explore More</a>
+                          </div>
+                        </div>
+                          <div className={styles.slide}>
+                          <img src="/GradinaBotanica9.webp" alt="Botanical Garden Anastasie Fatu" />
+                          <div className={styles.descriptionBox}>
+                            <p>Botanical Garden Anastasie Fatu</p>
+                            <a href="https://www.botanica.uaic.ro/" target="_blank" rel="noopener noreferrer">Explore More</a>
+                          </div>
+                        </div>
+                        <div className={styles.slide}>
+                          <img src="/informatica1.jpg" alt="Studenti" />
+                          <div className={styles.descriptionBox}>
+                            <p>Students working in the Informatics classrooms.</p>
+                          </div>
+                        </div>
+                        <div className={styles.slide}>
+                          <img src="/informatica2.jpg" alt="Studenti" />
+                          <div className={styles.descriptionBox}>
+                            <p>Students working in the Informatics classrooms.</p>
+                          </div>
+                        </div>
+                          <div className={styles.slide}>
+                          <img src="/Gaudeamus.webp" alt="Gaudeamus Canteen" />
+                          <div className={styles.descriptionBox}>
+                            <p>Gaudeamus Canteen</p>
+                          </div>
+                        </div>
+                      </Slider>
+                    </div>
+                  </div>
+                </div>
+
+                  <footer className={styles.footer}>
+                    <div className={styles.footerCenter}>
+                      <img src="/logo_uaic.png" alt="Logo 1" className={styles.footerLogo} />
+                      <img src="/logoFii.png" alt="Logo 2" className={styles.footerLogo} />
+                    </div>
+                    <div className={styles.footerText}>
+                      <p>© 2025 FiiHelp Assistant. Developed by students of the Master's program in Computational Linguistics under the guidance of Ionut Pistol.</p>
+                      <p>Contact us at: fiihelpuaicassistant@gmail.com</p>
+                    </div>
+                  </footer>
                 </div>
               ) : (
                 messages.map((message, index) => (
