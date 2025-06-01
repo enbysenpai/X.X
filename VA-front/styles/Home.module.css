@@ -273,11 +273,13 @@
 .userBubble {
   align-self: flex-end;
   border-radius: 18px 18px 4px 18px;
+  margin-bottom: 35px;
 }
 
 .botText {
   align-self: flex-start;
   border-radius: 18px 18px 18px 4px;
+  margin-bottom: 10px;
 }
 
 /* === MESSAGES LIST === */
@@ -288,7 +290,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  /* gap: 35px; */
   border-radius: 0.5rem;
   padding-top: 4.5rem;
   padding-right: 1rem;
@@ -796,33 +798,254 @@
   border-color: var(--border-color-light-dark);
 }
 
-/* Responsive adjustments */
+.facultyResourceButtonContainer {
+  margin: 4px 0 12px 0;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+  width: 100%;
+}
+
+.facultyResourceButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #1f2937;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.facultyResourceButton:hover {
+  background-color: #374151;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.facultyIcon {
+  font-size: 16px;
+}
+
+/* Sidebar Overlay */
+.sidebarOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  /* backdrop-filter: blur(2px); */
+}
+
+/* Sidebar Container */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 400px;
+  background-color: white;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Sidebar Header */
+.sidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+}
+
+.sidebarHeader h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+/* Sidebar Content */
+.sidebarContent {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+/* Shop Item Styles */
+.facultyResource {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  transition: all 0.2s ease;
+}
+
+.facultyResource:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #d1d5db;
+}
+
+.facultyResourceHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.facultyLogo {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.facultyName {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.facultyResourceTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.facultyResourceDescription {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+}
+
+.facultyResourceDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.facultyButton {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #3b82f6;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.facultyButton:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* Dark Mode Styles */
+.dark .sidebar {
+  background-color: #1f2937;
+  color: white;
+}
+
+.dark .sidebarHeader {
+  background-color: #111827;
+  border-bottom-color: #374151;
+}
+
+.dark .sidebarHeader h3 {
+  color: white;
+}
+
+.dark .closeButton {
+  color: #9ca3af;
+}
+
+.dark .closeButton:hover {
+  background-color: #374151;
+  color: white;
+}
+
+.dark .facultyResource {
+  background-color: #374151;
+  border-color: #4b5563;
+}
+
+.dark .facultyResource:hover {
+  border-color: #6b7280;
+}
+
+.dark .facultyResourceTitle {
+  color: white;
+}
+
+.dark .facultyResourceDescription {
+  color: #d1d5db;
+}
+
+.dark .facultyName {
+  color: #d1d5db;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .welcomeContainer {
-    padding: 1rem;
+  .sidebar {
+    width: 100%;
   }
-  
-  .categoriesContainer {
-    grid-template-columns: 1fr;
-  }
-  
-  .description h1 {
-    font-size: 1.5rem;
-  }
-  
-  .description p {
-    font-size: 1rem;
-  }
-  
 }
 
 @media (max-width: 480px) {
-  .categoryBox {
-    padding: 1rem;
+  .sidebarContent {
+    padding: 12px;
   }
   
-  .questionItem {
-    padding: 0.5rem;
-    font-size: 0.9rem;
+  .facultyResource {
+    padding: 12px;
+  }
+  
+  .facultyResourceTitle {
+    font-size: 15px;
   }
 }
