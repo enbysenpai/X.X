@@ -123,7 +123,7 @@ export default function Home() {
     { id: 3, name: 'News', icon: Newspaper, url: 'https://www.info.uaic.ro/noutati/' },
     { id: 4, name: 'Contact', icon: Contact, url: 'https://www.info.uaic.ro/contact/' },
     { id: 5, name: 'Admission', icon: University, url: 'https://www.info.uaic.ro/admitere/' },
-    { id: 6, name: 'Scolarship', icon: BanknoteArrowUp, url: 'https://www.uaic.ro/studenti/burse/' },
+    { id: 6, name: 'Scholarship', icon: BanknoteArrowUp, url: 'https://www.uaic.ro/studenti/burse/' },
     { id: 7, name: 'Taxes', icon: BanknoteArrowDown, url: 'https://plati-taxe.uaic.ro/' },
     { id: 8, name: 'Housing', icon: House, url: 'https://www.uaic.ro/studenti/cazare/' }
   ];
@@ -730,9 +730,11 @@ export default function Home() {
 
     return (
     <>
-      <Head>
-        <title>FiiHelp</title>
-      </Head>
+        <Head>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>FiiHelp</title>
+        </Head>
+
       <div className={isDarkMode ? styles.dark : styles.light}>
         <div className={styles.topnav}>
             <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0 1rem 0 0' }}>
@@ -795,7 +797,7 @@ export default function Home() {
                   <div className={styles.description}>
                     <h1>Welcome to FiiHelp Assistant</h1>
                     <p>Your virtual assistant for all questions related to the Faculty of Computer Science (FII). 
-                    Get instant answers about admissions, academic programs, student services, and more.</p>
+                    Get instant answers about admissions, academic programs, student services and more.</p>
                   </div>
                   <div className={styles.center}>
             <div className={styles.cloudform}>
@@ -816,14 +818,15 @@ export default function Home() {
                     className={styles.textarea}
                   />
 
-                  <button
-                    type="button"
-                    disabled={loading}
-                    onClick={handleRecord}
-                    className={styles.recordButton}
-                  >
-                    {isRecording ? "⏹ Stop" : "🎤 Record"}
-                  </button>
+                    <button
+                        type="button"
+                        disabled={loading}
+                        onClick={handleRecord}
+                        className={styles.recordButton}
+                        title={isRecording ? "Stop Recording" : "Start Recording"}
+                    >
+                        {isRecording ? "⏹" : "🎤"}
+                    </button>
 
                   <button
                     type="submit"
@@ -1052,31 +1055,21 @@ export default function Home() {
                     className={styles.textarea}
                   />
 
-                  <button
-                    type="button"
-                    disabled={loading}
-                    onClick={handleRecord}
-                    className={styles.recordButton}
-                  >
-                    {isRecording ? "⏹ Stop" : "🎤 Record"}
-                  </button>
+                    <button
+                        type="button"
+                        disabled={loading}
+                        onClick={handleRecord}
+                        className={styles.recordButton}
+                    >
+                        🎤
+                    </button>
 
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className={styles.generatebutton}
-                  >
-                    {loading ? (
-                      <div className={styles.loadingwheel}>
-                        <CircularProgress color="inherit" size={20}/>
-                      </div>
-                    ) : (
-                      <svg viewBox="0 0 20 20" className={styles.svgicon}
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
-                      </svg>
-                    )}
+                    <button
+                        type="submit"
+                        disabled={loading}
+                        className={styles.generatebutton}
+                    >
+                        ⬆️
                   </button>
                 </div>
               </form>
