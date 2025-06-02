@@ -516,25 +516,6 @@ export default function Home() {
                       </div>
                     ))}
                   </div>
-                {/* <div className={styles.slideshowParent}>
-                  <div className={styles.slideshowContainer}>
-                    <div className={styles.sliderWrapper}>
-                      <Slider {...settings}>
-                      <div><img src="/BCU1.jpg" alt="Biblioteca Centrala Universitara" /></div>
-                      <div><img src="/BCU3.jpg" alt="Biblioteca Centrala Universitara" /></div>
-                      <div><img src="/GradinaBotanica1.png" alt="Gradina Botanica" /></div>
-                      <div><img src="/GradinaBotanica2.jpg" alt="Gradina Botanica" /></div>
-                      <div><img src="/GradinaBotanica4.webp" alt="Gradina Botanica" /></div>
-                      <div><img src="/GradinaBotanica6.webp" alt="Gradina Botanica" /></div>
-                      <div><img src="/GradinaBotanica7.webp" alt="Gradina Botanica" /></div>
-                      <div><img src="/GradinaBotanica8.webp" alt="Gradina Botanica" /></div>
-                      <div><img src="/GradinaBotanica9.webp" alt="Gradina Botanica" /></div>
-                      <div><img src="/informatica1.jpg" alt="Studenti" /></div>
-                      <div><img src="/informatica2.jpg" alt="Studenti" /></div>
-                      </Slider>
-                   </div>
-                  </div>
-                </div> */}
                 <div className={styles.slideshowParent}>
                   <div className={styles.slideshowContainer}>
                     <div className={styles.sliderWrapper}>
@@ -604,6 +585,27 @@ export default function Home() {
                           <img src="/Gaudeamus.webp" alt="Gaudeamus Canteen" />
                           <div className={styles.descriptionBox}>
                             <p>Gaudeamus Canteen</p>
+                          </div>
+                        </div>
+                        <div className={styles.slide}>
+                          <img src="/muzeuluniversitatii.jpg" alt="University Museum" />
+                          <div className={styles.descriptionBox}>
+                            <p>University Museum</p>
+                            <a href="https://www.uaic.ro/muzeul-universitatii-alexandru-ioan-cuza/" target="_blank" rel="noopener noreferrer">Explore More</a>
+                          </div>
+                        </div>
+                        <div className={styles.slide}>
+                          <img src="/salaPasilorPierduti1.jpg" alt="Sala Pasilor Pierduti" />
+                          <div className={styles.descriptionBox}>
+                            <p>"Sala Pasilor Pierduti"</p>
+                            <a href="https://www.uaic.ro/despre-uaic/prezentare-sala-pasilor-pierduti/" target="_blank" rel="noopener noreferrer">Explore More</a>
+                          </div>
+                        </div>
+                          <div className={styles.slide}>
+                          <img src="/sala_pasilor_pierduti.jpg" alt="Sala Pasilor Pierduti" />
+                          <div className={styles.descriptionBox}>
+                            <p>"Sala Pasilor Pierduti"</p>
+                            <a href="https://www.uaic.ro/despre-uaic/prezentare-sala-pasilor-pierduti/" target="_blank" rel="noopener noreferrer">Explore More</a>
                           </div>
                         </div>
                       </Slider>
