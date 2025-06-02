@@ -505,8 +505,8 @@
 }
 
 .dark .resourcesDropdown {
-  background-color: #2a2b32;
-  border-color: #4d4d4f;
+  background-color: #153448;
+  border-color: #153448;
 }
 
 .light .resourcesDropdown {
@@ -543,7 +543,7 @@
 }
 
 .dark .resourceItem:hover {
-  background-color: #3e3f4b;
+  background-color: #147487;
 }
 
 .light .resourceItem {
@@ -815,7 +815,7 @@
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background-color: #1f2937;
+  /* background-color: #1f2937; */
   color: white;
   border: none;
   border-radius: 16px;
@@ -824,6 +824,15 @@
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.light .facultyResourceButton {
+  background-color: #e0e0dc;
+  color: black;
+}
+
+.dark .facultyResourceButton {
+  background-color: #153448;
 }
 
 .facultyResourceButton:hover {
@@ -912,6 +921,10 @@
   padding: 16px;
 }
 
+.dark .sidebarContent {
+  background-color: #3C5B6F;
+}
+
 /* Shop Item Styles */
 .facultyResource {
   background-color: white;
@@ -995,7 +1008,7 @@
 }
 
 .dark .sidebarHeader {
-  background-color: #111827;
+  background-color: #153448;
   border-bottom-color: #374151;
 }
 

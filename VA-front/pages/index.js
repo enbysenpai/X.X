@@ -134,7 +134,7 @@ export default function Home() {
     title: "Academic staff",
     description: "Contact information for professors and staff including office locations, email addresses, and personal websites. Users may search for specific professors by name or department.",
     url: "https://www.info.uaic.ro/personal-academic",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["professor", "staff", "email", "office", "contact", "website", "person", "faculty", "mr", "mrs", "prof"]
   },
   {
@@ -142,7 +142,7 @@ export default function Home() {
     title: "Canteens and cafes",
     description: "Complete information about campus dining options including: canteen locations, opening hours, menus, and prices. Users may refer to these as 'cafeteria', 'dining hall', or 'food court'.",
     url: "https://www.uaic.ro/studenti/cantinele-universitatii-alexandru-ioan-cuza/",
-    logo: "/logos/UaicLogo.jpg",
+    logo: "/UaicLogo.jpg",
     keywords: ["canteen", "cafeteria", "food", "menu", "price", "hours", "opening", "eat", "cafe"]
   },
   {
@@ -150,7 +150,7 @@ export default function Home() {
     title: "Master programs info",
     description: "Information about master programs, including websites and study plan link.",
     url: "https://www.info.uaic.ro/en/master-studies/",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["Software Engineering", "Computational Linguistics", "Computational Optimization", "Artificial Intelligence and Optimization",
                      "Information Security", "Advanced Studies in Computer Science", "MISS", "ISS", "MLC", "LC", "MIAO", "IAO", "MSD", "SD", "MSI", "SI", "MSAI", "SAI"]
   },
@@ -159,7 +159,7 @@ export default function Home() {
     title: "Scholarships",
     description: "Complete information about scholarship information, including contact persons information, social problems department location, scholarship categories.",
     url: "https://www.uaic.ro/studenti/burse/",
-    logo: "/logos/UaicLogo.jpg",
+    logo: "/UaicLogo.jpg",
     keywords: ["scholarship", "grant", "financial", "bursary", "support", "tuition", "funding", "merit", "social problems", "social support", "erasmus", "social scholarship"]
   },
   {
@@ -167,7 +167,7 @@ export default function Home() {
     title: "Student accommodation",
     description: "Complete information about student accommodation.",
     url: "https://www.uaic.ro/studenti/cazare/",
-    logo: "/logos/UaicLogo.jpg",
+    logo: "/UaicLogo.jpg",
     keywords: ["dorm", "room", "bed", "accommodation", "titu", "codrescu", "targusor", "gaudeamus", "akademos", "buna vestire", "live",
                      "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C10", "C11", "C12", "Titu Maiorescu", "Târguşor-Copou"]
   },
@@ -176,7 +176,7 @@ export default function Home() {
     title: "Request for study interruption",
     description: "Form request for study interruption.",
     url: "https://profs.info.uaic.ro/~webdata/regulamente/Cerere%20intrerupere%20studii.docx",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["study interruption"]
   },
   {
@@ -184,7 +184,7 @@ export default function Home() {
     title: "Request for academic transcript issuance",
     description: "Form request for academic transcript issuance.",
     url: "https://profs.info.uaic.ro/~webdata/regulamente/Cerere%20eliberare%20situatie%20scolara.docx",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["academic transcript issuance"]
   },
   {
@@ -192,7 +192,7 @@ export default function Home() {
     title: "Request to borrow diploma",
     description: "Form request to borrow diploma.",
     url: "https://profs.info.uaic.ro/~webdata/regulamente/Cerere%20imprumut%20diploma.docx",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["borrow diploma"]
   },
   {
@@ -200,7 +200,7 @@ export default function Home() {
     title: "Request for faculty withdrawal",
     description: "Form request for faculty withdrawal.",
     url: "https://profs.info.uaic.ro/~webdata/regulamente/cerere%20retragere_facultate.doc",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["faculty withdrawal"]
   },
   {
@@ -208,7 +208,7 @@ export default function Home() {
     title: "Request for withdrawal submitted to the registry",
     description: "Form request for withdrawal submitted to the registry.",
     url: "https://profs.info.uaic.ro/~webdata/regulamente/cerere%20retragere_registratura.doc",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["withdrawal submitted to the registry"]
   },
   {
@@ -216,7 +216,7 @@ export default function Home() {
     title: "Medical services",
     description: "Available medical resources",
     url: "https://www.uaic.ro/studenti/servicii-medicale/",
-    logo: "/logos/UaicLogo.jpg",
+    logo: "/UaicLogo.jpg",
     keywords: ["medical services"]
   },
   {
@@ -224,7 +224,7 @@ export default function Home() {
     title: "Student regulations",
     description: "Rules of the faculty",
     url: "https://www.info.uaic.ro/regulamente/",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["student regulations"]
   },
   {
@@ -232,7 +232,7 @@ export default function Home() {
     title: "Study plans",
     description: "Study plans for the students",
     url: "https://edu.info.uaic.ro/fise-discipline/",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["study plans"]
   },
   {
@@ -240,7 +240,7 @@ export default function Home() {
     title: "Schedule bachelor year 1 A",
     description: "Bachelor's program schedule for Year 1, Semigroup A.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_I1A.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["1A", "first year A", "year 1 A"]
   },
   {
@@ -248,7 +248,7 @@ export default function Home() {
     title: "Schedule bachelor year 1 B",
     description: "Bachelor's program schedule for Year 1, Semigroup B.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_I1B.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["1B", "first year B", "year 1 B"]
   },
   {
@@ -256,7 +256,7 @@ export default function Home() {
     title: "Schedule bachelor year 1 E",
     description: "Bachelor's program schedule for Year 1, Semigroup E.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_I1E.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["1E", "first year E", "year 1 E"]
   },
   {
@@ -264,7 +264,7 @@ export default function Home() {
     title: "Schedule bachelor year 2 A",
     description: "Bachelor's program schedule for Year 2, Semigroup A.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_I2A.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["2A", "second year A", "year 2 A"]
   },
   {
@@ -272,7 +272,7 @@ export default function Home() {
     title: "Schedule bachelor year 2 B",
     description: "Bachelor's program schedule for Year 2, Semigroup B.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_I2B.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["2B", "second year B", "year 2 B"]
   },
   {
@@ -280,7 +280,7 @@ export default function Home() {
     title: "Schedule bachelor year 2 E",
     description: "Bachelor's program schedule for Year 2, Semigroup E.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_I2E.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["2E", "second year E", "year 2 E"]
   },
   {
@@ -288,7 +288,7 @@ export default function Home() {
     title: "Schedule bachelor year 3 A",
     description: "Bachelor's program schedule for Year 3, Semigroup A.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_I3A.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["3A", "third year A", "year 3 A"]
   },
   {
@@ -296,15 +296,15 @@ export default function Home() {
     title: "Schedule bachelor year 3 B",
     description: "Bachelor's program schedule for Year 3, Semigroup B.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_I3B.html",
-    logo: "/logos/FiiLogo.png",
-    keywords: ["3B", "third year B", "year 3 B", "error"]
+    logo: "/FiiLogo.png",
+    keywords: ["3B", "third year B", "year 3 B"]
   },
   {
     id: 22,
     title: "Schedule bachelor year 3 E",
     description: "Bachelor's program schedule for Year 3, Semigroup E.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_I3E.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["3E", "third year E", "year 3 E"]
   },
   {
@@ -312,7 +312,7 @@ export default function Home() {
     title: "Schedule master IAO year 1",
     description: "Artificial Intelligence and Optimization master's program schedule for Year 1.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_MIAO1.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["MIAO1", "IAO1"]
   },
   {
@@ -320,7 +320,7 @@ export default function Home() {
     title: "Schedule master IAO year 2",
     description: "Artificial Intelligence and Optimization master's program schedule for Year 2.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_MIAO2.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["MIAO2", "IAO2"]
   },
   {
@@ -328,7 +328,7 @@ export default function Home() {
     title: "Schedule master LC year 1",
     description: "Computational Linguistics master's program schedule for Year 1.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_MLC1.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["MLC1", "LC1"]
   },
   {
@@ -336,7 +336,7 @@ export default function Home() {
     title: "Schedule master LC year 2",
     description: "Computational Linguistics master's program schedule for Year 2.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_MLC2.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["MLC2", "LC2"]
   },
   {
@@ -344,7 +344,7 @@ export default function Home() {
     title: "Schedule master SI year 1",
     description: "Information Security master's program schedule for Year 1.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_MSI1.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["MSI1", "SI1"]
   },
   {
@@ -352,7 +352,7 @@ export default function Home() {
     title: "Schedule master SI year 2",
     description: "Information Security master's program schedule for Year 2.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_MSI2.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["MSI2", "SI2"]
   },
   {
@@ -360,7 +360,7 @@ export default function Home() {
     title: "Schedule master SAI year 1",
     description: "Advanced Studies in Computer Science master's program schedule for Year 1.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_MSAI1.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["MSAI1", "SAI1"]
   },
   {
@@ -368,7 +368,7 @@ export default function Home() {
     title: "Schedule master SAI year 2",
     description: "Advanced Studies in Computer Science master's program schedule for Year 2.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_MSAI2.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["MSAI2", "SAI2"]
   },
   {
@@ -376,7 +376,7 @@ export default function Home() {
     title: "Schedule master SD year 1",
     description: "Distributed Systems master's program schedule for Year 1.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_MSD1.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["MSD1", "SD1"]
   },
   {
@@ -384,7 +384,7 @@ export default function Home() {
     title: "Schedule master SD year 2",
     description: "Distributed Systems master's program schedule for Year 2.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_MSD2.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["MSD2", "SD2"]
   },
   {
@@ -392,7 +392,7 @@ export default function Home() {
     title: "Schedule master ISS1 year 1",
     description: "Software Engineering master's program schedule for Year 1 Group 1.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_MISS11.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["MISS11", "ISS11"]
   },
   {
@@ -400,7 +400,7 @@ export default function Home() {
     title: "Schedule master ISS2 year 1",
     description: "Software Engineering master's program schedule for Year 1 Group 2.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_MISS12.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["MISS12", "ISS12"]
   },
   {
@@ -408,7 +408,7 @@ export default function Home() {
     title: "Schedule master ISS1 year 2",
     description: "Software Engineering master's program schedule for Year 2 Group 1.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_MISS21.html",
-    logo: "/logos/FiiLogo.png",
+    logo: "/FiiLogo.png",
     keywords: ["MISS21", "ISS21"]
   },
   {
@@ -416,23 +416,26 @@ export default function Home() {
     title: "Schedule master ISS2 year 2",
     description: "Software Engineering master's program schedule for Year 2 Group 2.",
     url: "https://edu.info.uaic.ro/orar/participanti/orar_MISS22.html",
-    logo: "/logos/FiiLogo.png",
-    keywords: ["MISS22", "ISS22"]
+    logo: "/FiiLogo.png",
+    keywords: ["MISS22", "ISS22", "error"]
   }
 ];
 
   const filteredLinks = (message) => {
-    const messageLower = message.toLowerCase();
-    return facultyLinks.filter(link => {
-      return link.keywords?.some(keyword => 
-        messageLower.includes(keyword.toLowerCase())
-      )
-    })
+    if(message.length) {
+      const messageLower = message.toLowerCase();
+      const result = facultyLinks.filter(link => {
+        return link.keywords && link.keywords.some(keyword =>
+          messageLower.includes(keyword.toLowerCase())
+        );
+      });
+      return result;
+    }
   };
 
-  const facultySidebar = ({ isOpen, onClose, links }) => {
+  const FacultySidebar = ({ isOpen, onClose, links }) => {
     if (!isOpen) return null;
-
+    console.log(links);
     return (
       <>
         <div 
@@ -468,6 +471,7 @@ export default function Home() {
                   className={styles.facultyButton}
                   onClick={onClose}
                 >
+                  Click here
                 </a>
               </div>
             ))}
@@ -1010,7 +1014,7 @@ export default function Home() {
                       </div>
                     </div>
                   );
-                        if(message.type === "apiMessage") {
+                        if(message.type === "apiMessage" && filteredLinks(message.message).length > 0) {
                         acc.push(
                         <div key={`faculty-${index}`} className={styles.facultyResourceContainer}>
                           <button
@@ -1088,10 +1092,10 @@ export default function Home() {
           </div>  
           )}                     
         </main>
-          <facultySidebar 
+          <FacultySidebar 
             isOpen={isSidebarOpen}
             onClose={() => setIsSidebarOpen(false)}
-            links={filteredLinks || []}
+            links={messages.length > 0 ? filteredLinks(messages[messages.length - 1].message) : []}
           />
       </div>
     </>
