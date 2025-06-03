@@ -986,7 +986,7 @@ export default function Home() {
                   <footer className={styles.footer}>
                     <div className={styles.footerCenter}>
                       <img src="/logo_uaic.png" alt="Logo 1" className={styles.footerLogo} />
-                      <img src="/logoFii.png" alt="Logo 2" className={styles.footerLogo} />
+                      <span className={styles.universityName}>"Alexandru Ioan Cuza" University of Iași</span>
                     </div>
                     <div className={styles.footerText}>
                       <p>© 2025 FiiHelp Assistant. Developed by students of the Master's program in Computational Linguistics under the guidance of Ionut Pistol.</p>

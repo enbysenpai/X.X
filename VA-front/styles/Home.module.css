@@ -26,10 +26,10 @@
 
 .cloud {
   width: 100vw;
-  height: auto;
-  min-height: calc(100vh - 7rem);
+  height: 65vh;
   background: var(--bg);
   box-shadow: none;
+  padding: 0;
   padding-top: 4.5rem;
   flex: 1;
   display: flex;
@@ -51,8 +51,6 @@
 
 /* === HEADER / NAV === */
 .topnav {
-  position: relative;
-  z-index: 2000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,6 +58,7 @@
   font-size: 1.5rem;
   background: var(--input-bg);
   border-bottom: 1px solid #1f2227;
+  position: fixed;
   width: 100vw;
 }
 
@@ -203,7 +202,7 @@
   outline: none;
   transition: height 0.2s ease-in-out;
   max-height: 160px;
-  min-height: 0;
+  min-height: 0px;
 }
 
 .textarea:disabled {
@@ -261,8 +260,7 @@
 .userBubble,
 .botText {
   padding: 10px 16px;
-  max-width: 85%;
-  width: fit-content;
+  max-width: 70%;
   display: inline-block;
   word-wrap: break-word;
   white-space: pre-wrap;
@@ -270,9 +268,6 @@
   font-size: 1rem;
   background-color: var(--bubble-bg);
   color: var(--text);
-  overflow-wrap: break-word;
-  word-break: break-word;
-  box-sizing: border-box;
 }
 
 .userBubble {
@@ -292,13 +287,15 @@
   flex: 1;
   overflow-y: auto;
   width: 100%;
-  max-height: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   /* gap: 35px; */
   border-radius: 0.5rem;
-  padding: 5rem 1rem 1rem;
-  box-sizing: border-box;
+  padding-top: 4.5rem;
+  padding-right: 1rem;
+  scrollbar-gutter: stable;
+  padding: 0 12.5vw;
 }
 
 .messagelist::-webkit-scrollbar {
@@ -424,13 +421,11 @@
 
 /* === THEMES === */
 .light {
-  --bg: #f7f3ef;
+  --bg: #f7f3ef;           /* Warm light cream */
   --text: #1a1a1a;
-  --text-color: #1a1a1a;
   --input-bg: #e8e8e4;
   --bubble-bg: #e0e0dc;
   --button-bg: #d4d4d0;
-  --background-color: white;
 }
 
 .dark {
@@ -439,7 +434,6 @@
   --input-bg: #153448;
   --bubble-bg: #153448;
   --button-bg: #147487;
-  --text-color: #ECECF1;
 }
 
 /* Audio-specific message styling */
@@ -498,7 +492,7 @@
 
 .resourcesDropdown {
   position: absolute;
-  left: 0;
+  left: 0;  
   top: 100%;
   margin-top: 5px;
   background-color: var(--background-color);
@@ -506,8 +500,8 @@
   border-radius: 5px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   width: 200px;
+  z-index: 1000;
   overflow: hidden;
-  z-index: 3000;
 }
 
 .dark .resourcesDropdown {
@@ -601,119 +595,57 @@
 /* === MOBILE === */
 @media (max-width: 600px) {
   .main {
-    padding-top: 5.5rem; /* space for .topnav height */
-    padding-left: 1rem;
-    padding-right: 1rem;
-    height: auto;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-  .topnav {
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 999;
+    padding: 1rem;
+    max-height: 90vh;
   }
 
   .cloud {
-    width: 100%;
-    height: auto;
-    max-height: none;
-    flex-grow: 1;
-    overflow-y: visible;
-    padding: 2rem 0;
-  }
-
-  .messagelist {
-    padding: 0 1rem;
+    width: 22rem;
+    height: 28rem;
   }
 
   .inputArea {
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
-  .inputWrap {
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    align-items: stretch;
-    gap: 0.5rem;
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  .textarea {
-    width: 100%;
-    font-size: 1rem;
-    line-height: 1.4;
-    padding: 1rem 1.2rem; /* more top/bottom padding */
-    border-radius: 1.5rem;
-    border: 1px solid #30373d;
-    background: var(--input-bg);
-    color: var(--text);
-    resize: none;
-    overflow-y: auto;
-    min-height: 64px; /* slightly more */
-    max-height: 200px;
-    transition: height 0.2s ease;
-    box-sizing: border-box;
-    display: block;
-  }
-
-  .textarea::placeholder {
-    color: #5f6368;
-    line-height: 1.5; /* make sure this is set */
-  }
-
-  .recordButton,
-  .generatebutton {
+  .topnav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    font-size: 1.25rem;
-    border: none;
+    padding: 1rem 1.5rem;
+  }
+
+  .themeToggle {
+    padding: 0.4rem 0.75rem;
+    border-radius: 0.5rem;
+    background: transparent;
+    border: 1px solid #4b4b4b;
+    color: #ececf1;
     cursor: pointer;
-    background-color: var(--button-bg);
-    color: var(--text);
+    font-weight: 500;
+    transition: all 0.2s ease;
   }
 
-  .generatebutton {
-    background-color: #333;
-    color: white;
+  .themeToggle:hover {
+    background: #1f2227;
   }
 
-  .generatebutton:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-
-  .categoriesContainer {
-    grid-template-columns: 1fr;
-    padding: 0.5rem;
-    gap: 1rem;
-  }
-
-  .categoryBox {
-    width: 100%;
-    padding: 1rem;
-  }
-
-  .questionItem {
-    padding: 0.5rem;
-    font-size: 0.9rem;
+  .navlogo {
+    font-size: 1.25rem;
+    width: 20rem;
   }
 
   .footer {
-    text-align: center;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+  }
+
+  .markdownanswer code {
+    white-space: pre-wrap !important;
   }
 }
+
 
 /* Audio player styling */
 .audioPlayer {
@@ -818,10 +750,9 @@
   font-size: 1.2rem;
   margin: 0 0 1rem 0;
   color: var(--text-color);
-  display: block; /* was flex — change to block for wrapping */
-  text-align: center;
-  line-height: 1.4;
-  word-break: break-word;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Questions List Styles */
@@ -1115,30 +1046,9 @@
   color: #d1d5db;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .sidebarContent {
-    padding: 12px;
-  }
-
-  .facultyResource {
-    padding: 12px;
-  }
-
-  .facultyResourceTitle {
-    font-size: 15px;
-  }
-}
-
 .slideshowContainer {
   width: 100wv;
-  margin: 6rem auto 2rem;
+  margin: 6rem auto 2rem; 
   padding: 0;
   display: flex;
   justify-content: center;
@@ -1161,21 +1071,68 @@
   display: block;
 }
 
-@media (max-width: 768px) {
-  .sliderWrapper {
-    width: 95%;
-  }
-
-  .sliderWrapper img {
-    max-height: 300px;
-  }
-}
-
 .slide {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Universal menu overlay rules - applies to ALL screen widths */
+.menu-dropdown,
+.nav-menu,
+.dropdown-menu,
+.mobile-menu,
+.topnav .dropdown,
+.topnav .menu-list {
+  position: absolute !important;
+  top: 100% !important; /* Position directly below the topbar */
+  left: 0 !important;
+  right: 0 !important;
+  width: 100vw !important;
+  z-index: 999 !important; /* Above content but below topbar */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  max-height: calc(100vh - 60px) !important;
+  overflow-y: auto !important;
+  box-sizing: border-box !important;
+  transform: translateY(0) !important;
+  /* Let menu inherit original background and border colors naturally */
+}
+
+/* Ensure the topbar has proper z-index to stay above menu */
+.topnav {
+  position: relative !important;
+  z-index: 1000 !important;
+}
+
+/* Ensure menu button is properly positioned */
+.menu-button,
+.hamburger-menu,
+.nav-menu-button,
+.topnav button:not(.theme-toggle) {
+  position: relative !important;
+  z-index: 1001 !important;
+  cursor: pointer !important;
+}
+
+/* Menu content styling */
+.menu-dropdown ul,
+.nav-menu ul,
+.dropdown-menu ul,
+.mobile-menu ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.menu-dropdown a,
+.nav-menu a,
+.dropdown-menu a,
+.mobile-menu a {
+  display: block !important;
+  padding: 1rem 1.5rem !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
 }
 
 .descriptionBox {
@@ -1204,8 +1161,8 @@
 
 .footer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; 
+  align-items: center; 
   background-color: var(--bg);
   padding: 1rem;
   width: 100%;
@@ -1215,8 +1172,8 @@
 
 .footerCenter {
   display: flex;
-  gap: 15px;
-  justify-content: center;
+  gap: 15px; 
+  justify-content: center; 
   align-items: center;
 }
 
@@ -1226,7 +1183,641 @@
 }
 
 .footerText {
-  margin-top: 10px;
+  margin-top: 10px; 
   color: var(--text);
 }
 
+.universityName {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-left: 12px;
+}
+
+.facultyName {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.separator {
+  color: var(--text);
+  margin: 0 10px;
+  opacity: 0.6;
+}
+
+.universityInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 12px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 15px;
+  text-align: center;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .footerCenter {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .universityName {
+    margin-left: 0;
+    text-align: center;
+    font-size: 15px;
+  }
+  
+  .universityInfo,
+  .textContainer {
+    margin-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .universityName {
+    font-size: 14px;
+  }
+  
+  .facultyName {
+    font-size: 12px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebarContent {
+    padding: 12px;
+  }
+  
+  .facultyResource {
+    padding: 12px;
+  }
+  
+  .facultyResourceTitle {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sliderWrapper {
+    width: 95%;
+  }
+  
+  .sliderWrapper img {
+    max-height: 300px;
+  }
+}
+
+/* Here lies the modified part */
+
+/* Enhanced responsive design for 620px and below with input bar below header */
+
+@media (max-width: 620px) {
+  /* Keep main container at full viewport height and width */
+  .main {
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  /* Position input area below header instead of fixed at bottom */
+  .inputArea {
+    position: relative !important; /* Changed from fixed */
+    bottom: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important; /* Full viewport width */
+    max-width: 100vw !important;
+    margin: 0 !important; /* Remove margins to prevent overflow */
+    padding: 15px 20px; /* Top, right, bottom, left */
+    background: var(--bg) !important;
+    border: none !important; /* Remove all borders */
+    box-shadow: none !important; /* Remove shadow */
+    z-index: 100 !important;
+    box-sizing: border-box;
+  }
+
+  /* Center the input wrapper within the container */
+  .inputWrap {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto;
+    flex-wrap: wrap !important; /* Allow wrapping on very small screens */
+  }
+
+  /* Shrink textarea but keep it centered */
+  .textarea {
+    width: 60% !important; /* Takes 60% of available width but centered */
+    min-width: 200px !important;
+    max-width: 400px !important;
+    font-size: 0.85rem !important; /* Shrunk font */
+    padding: 0.6rem !important; /* Shrunk padding */
+    min-height: 36px !important; /* Shrunk height */
+    max-height: 72px !important; /* Shrunk max height */
+    border-radius: 18px !important; /* More rounded for mobile */
+    border: 1px solid #30373d;
+    resize: none;
+    flex: 1 !important; /* Allow textarea to grow */
+  }
+
+  /* Make buttons bigger for better usability */
+  .recordButton,
+  .generatebutton {
+    height: 48px !important; /* Increased from 36px */
+    width: 48px !important; /* Increased from 36px */
+    font-size: 10px !important; /* Smaller font to fit text inside */
+    padding: 0 !important; /* Remove padding for icon-only buttons */
+    border-radius: 50% !important; /* Make circular */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important; /* Prevent shrinking */
+    text-align: center !important; /* Center text */
+    line-height: 1.1 !important; /* Tight line height for better fit */
+  }
+
+  /* Hide text in buttons on mobile, keep only icons */
+  .recordButton span:not(.icon),
+  .generatebutton span:not(.icon) {
+    display: inline !important; /* Show text instead of hiding */
+    font-size: inherit !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* Adjust main content area - no need to account for fixed input anymore */
+  .cloud {
+    height: calc(100vh - 60px) !important; /* Only account for header height */
+    width: 100vw !important;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    overflow-x: hidden !important; /* Prevent horizontal scrolling */
+    overflow-y: auto;
+    padding-top: 60px; /* Account for header */
+    box-sizing: border-box;
+  }
+
+  /* Adjust message list - no need for bottom padding for fixed input */
+  .messagelist {
+    padding: 1rem 15px 15px 15px !important; /* Normal bottom padding */
+    height: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box;
+    overflow-x: hidden !important; /* Prevent horizontal scrolling */
+    overflow-y: auto;
+  }
+
+  /* Shrink chat bubbles */
+  .userBubble,
+  .botText {
+    max-width: 85% !important;
+    font-size: 0.8rem !important; /* Shrunk font */
+    padding: 8px 12px !important; /* Shrunk padding */
+    line-height: 1.3 !important;
+    margin-bottom: 15px !important; /* Reduced margins */
+  }
+
+  .userBubble {
+    border-radius: 15px 15px 4px 15px !important;
+  }
+
+  .botText {
+    border-radius: 15px 15px 15px 4px !important;
+  }
+
+  /* Fixed top navigation - stays in place, doesn't scroll */
+  .topnav {
+    height: 60px !important;
+    width: 100vw !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 1rem !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 1000 !important; /* Higher z-index to stay above everything */
+    box-sizing: border-box;
+    overflow: visible !important; /* Allow menu to overflow outside topbar */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    /* Let topbar inherit original colors naturally - no overrides */
+  }
+
+  .navlogo {
+    font-size: 0.9rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Menu button positioned in the center area - preserve ALL original styling */
+  .menu-button,
+  .hamburger-menu,
+  .nav-menu-button,
+  .topnav button:not(.theme-toggle) {
+    position: relative !important;
+    z-index: 1001 !important; /* Above topbar but below dropdown */
+    margin-left: auto !important;
+    margin-right: 1rem !important;
+    cursor: pointer !important;
+    /* Remove ALL color overrides to preserve original styling */
+  }
+
+  /* Sidebar and overlay elements should appear above main topbar */
+  .sidebar,
+  .side-panel,
+  .overlay,
+  .modal,
+  .resources-sidebar,
+  .sidebar-overlay {
+    z-index: 1100 !important; /* Above main topbar */
+  }
+
+  /* Sidebar topbar/header should be above main topbar */
+  .sidebar .topbar,
+  .sidebar .header,
+  .sidebar .sidebar-header,
+  .side-panel .topbar,
+  .side-panel .header,
+  .resources-sidebar .topbar,
+  .resources-sidebar .header,
+  .sidebar-topbar,
+  .panel-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1150 !important; /* Highest z-index for sidebar header */
+    background: var(--bg) !important;
+    height: auto !important;
+    min-height: 60px !important;
+  }
+
+  /* Close button (x) should be easily accessible */
+  .sidebar .close-button,
+  .sidebar .close-btn,
+  .sidebar button[aria-label*="close"],
+  .sidebar button[aria-label*="Close"],
+  .side-panel .close-button,
+  .side-panel .close-btn,
+  .resources-sidebar .close-button,
+  .resources-sidebar .close-btn,
+  .close-sidebar,
+  .sidebar-close {
+    z-index: 1200 !important; /* Highest priority for close button */
+    position: relative !important;
+    cursor: pointer !important;
+  }
+
+  /* Theme toggle positioned on far right, vertically centered */
+  .theme-toggle {
+    width: 45px !important;
+    height: 22px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Menu dropdown - preserve original colors completely */
+  .menu-dropdown,
+  .nav-menu,
+  .dropdown-menu,
+  .mobile-menu,
+  .topnav .dropdown,
+  .topnav .menu-list {
+    position: absolute !important; /* Changed from fixed to absolute */
+    top: 100% !important; /* Position directly below the topbar */
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    z-index: 999 !important; /* Below topbar but above content */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    max-height: calc(100vh - 60px) !important;
+    overflow-y: auto !important;
+    box-sizing: border-box !important;
+    transform: translateY(0) !important; /* Ensure it appears below topbar */
+    /* Let menu inherit original background and border colors naturally */
+  }
+
+  /* Ensure menu content is properly styled */
+  .menu-dropdown ul,
+  .nav-menu ul,
+  .dropdown-menu ul,
+  .mobile-menu ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .menu-dropdown li,
+  .nav-menu li,
+  .dropdown-menu li,
+  .mobile-menu li {
+    /* Let border colors inherit naturally */
+  }
+
+  .menu-dropdown a,
+  .nav-menu a,
+  .dropdown-menu a,
+  .mobile-menu a {
+    display: block !important;
+    padding: 1rem 1.5rem !important;
+    text-decoration: none !important;
+    font-size: 0.9rem !important;
+    /* Let text colors inherit naturally */
+  }
+
+  .menu-dropdown a:hover,
+  .nav-menu a:hover,
+  .dropdown-menu a:hover,
+  .mobile-menu a:hover {
+    /* Let hover colors inherit naturally */
+  }
+
+  .slider {
+    width: 45px !important;
+    height: 20px !important;
+    padding: 0 4px !important;
+  }
+
+  .slider::before {
+    height: 14px !important;
+    width: 14px !important;
+    top: 3px !important;
+    left: 3px !important;
+  }
+
+  .theme-toggle input:checked + .slider::before {
+    transform: translateX(22px) !important;
+  }
+
+  .icon {
+    font-size: 10px !important; /* Shrunk */
+  }
+
+  /* Shrink welcome container elements */
+  .welcomeContainer {
+    padding: 1rem 15px !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .description h1 {
+    font-size: 1.4rem !important; /* Shrunk */
+    margin-bottom: 0.5rem !important;
+  }
+
+  .description p {
+    font-size: 0.85rem !important; /* Shrunk */
+    line-height: 1.4 !important;
+  }
+
+  .apptitle {
+    font-size: 1.8rem !important; /* Shrunk */
+  }
+
+  .appdescription {
+    font-size: 0.85rem !important; /* Shrunk */
+    margin: 0.5rem !important;
+  }
+
+  /* Shrink categories */
+  .categoriesContainer {
+    grid-template-columns: 1fr !important; /* Single column */
+    gap: 0.8rem !important;
+    margin-top: 1rem !important;
+    padding: 0 15px !important;
+  }
+
+  .categoryBox {
+    padding: 0.8rem !important; /* Shrunk */
+    border-radius: 8px !important;
+  }
+
+  .categoryBox h3 {
+    font-size: 0.9rem !important; /* Shrunk */
+    margin: 0 0 0.5rem 0 !important;
+  }
+
+  /* Shrink quick questions */
+  .quickQuestionsContainer {
+    padding: 0.5rem 15px !important;
+  }
+
+  .quickQuestionsContainer h2 {
+    font-size: 1.1rem !important; /* Shrunk */
+    margin-bottom: 0.5rem !important;
+  }
+
+  .quickQuestionsContainer button {
+    padding: 0.5rem 0.7rem !important;
+    margin-bottom: 0.3rem !important;
+    font-size: 0.8rem !important; /* Shrunk */
+    border-radius: 6px !important;
+  }
+
+  .questionItem {
+    padding: 0.5rem 0.7rem !important;
+    margin: 0.2rem 0 !important;
+    font-size: 0.75rem !important; /* Shrunk */
+    border-radius: 5px !important;
+  }
+
+  /* Shrink footer */
+  .footer {
+    padding: 0.5rem 15px !important;
+    font-size: 0.65rem !important;
+  }
+
+  .footerLogo {
+    height: 28px !important;
+  }
+
+  .universityName {
+    font-size: 12px !important;
+  }
+
+  .facultyName {
+    font-size: 10px !important;
+  }
+
+  /* Shrink slideshow */
+  .sliderWrapper img {
+    max-height: 180px !important;
+  }
+
+  .descriptionBox {
+    padding: 4px 6px !important;
+    font-size: 0.65rem !important;
+    border-radius: 3px !important;
+  }
+
+  /* Shrink resource elements */
+  .facultyResourceButton {
+    padding: 4px 8px !important;
+    font-size: 10px !important;
+    border-radius: 8px !important;
+  }
+
+  .resourcesButton {
+    height: 24px !important;
+    padding: 3px 6px !important;
+    font-size: 10px !important;
+  }
+
+  /* Enhanced dark/light mode support for input area */
+  .dark .inputArea {
+    background: var(--bg) !important;
+    border: none !important; /* Remove border */
+    box-shadow: none !important; /* Remove shadow */
+  }
+
+  .light .inputArea {
+    background: var(--bg) !important;
+    border: none !important; /* Remove border */
+    box-shadow: none !important; /* Remove shadow */
+  }
+  
+  /* Remove dark/light mode color overrides for menu to preserve original colors */
+}
+
+/* Extra small screens - input elements wrap to multiple lines */
+@media (max-width: 480px) {
+  .inputArea {
+    padding: 12px 15px 15px 15px !important;
+    width: 100vw !important; /* Ensure full viewport width */
+    margin: 0 !important; /* Remove margins to prevent overflow */
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  /* Allow input elements to wrap on small screens */
+  .inputWrap {
+    flex-direction: column !important; /* Stack vertically on very small screens */
+    gap: 8px !important;
+  }
+
+  .textarea {
+    width: 100% !important; /* Full width when stacked */
+    min-width: auto !important;
+    max-width: none !important;
+    font-size: 0.8rem !important;
+    padding: 0.5rem !important;
+    min-height: 32px !important;
+    max-height: 64px !important;
+  }
+
+  /* Create a button container for horizontal layout with larger width buttons */
+  .inputWrap > .recordButton,
+  .inputWrap > .generatebutton {
+    height: 56px !important; /* Keep same height */
+    width: 140px !important; /* Even larger width for separate lines */
+    font-size: 12px !important; /* Slightly larger font */
+    border-radius: 28px !important; /* Pill shape */
+    flex-shrink: 0 !important;
+  }
+
+  /* Create a button row when textarea is full width */
+  .inputWrap > :not(.textarea) {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 15px !important;
+  }
+
+  .messagelist {
+    padding: 1rem 10px 15px 10px !important; /* Normal bottom padding */
+  }
+
+  .topnav {
+    height: 55px !important;
+    width: 100vw !important;
+    padding: 0.4rem 0.8rem !important;
+    left: 0 !important;
+    box-sizing: border-box;
+    overflow: visible !important; /* Allow menu to overflow */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    position: fixed !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    /* Let topbar inherit original colors naturally - no background override */
+  }
+
+  /* Menu button for smaller screens - preserve ALL original styling */
+  .menu-button,
+  .hamburger-menu,
+  .nav-menu-button,
+  .topnav button:not(.theme-toggle) {
+    position: relative !important;
+    z-index: 1001 !important;
+    margin-left: auto !important;
+    margin-right: 1rem !important;
+    cursor: pointer !important;
+    /* Remove ALL color overrides to preserve original styling */
+  }
+
+  /* Theme toggle positioned on far right, vertically centered */
+  .theme-toggle {
+    width: 45px !important;
+    height: 22px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Adjust menu position for smaller screens - preserve original colors */
+  .menu-dropdown,
+  .nav-menu,
+  .dropdown-menu,
+  .mobile-menu,
+  .topnav .dropdown,
+  .topnav .menu-list {
+    position: absolute !important;
+    top: 100% !important; /* Position directly below the smaller topbar */
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    z-index: 999 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    max-height: calc(100vh - 55px) !important;
+    overflow-y: auto !important;
+    box-sizing: border-box !important;
+    transform: translateY(0) !important;
+    /* Let menu inherit original background and border colors naturally */
+  }
+
+  .cloud {
+    height: calc(100vh - 55px) !important; /* Only account for header */
+    width: 100vw !important;
+    padding-top: 55px !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box;
+  }
+}
