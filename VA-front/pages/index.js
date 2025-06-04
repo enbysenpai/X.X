@@ -799,7 +799,7 @@ export default function Home() {
               {messages.length === 0 ? (
                 <div className={styles.welcomeContainer}>
                   <div className={styles.description}>
-                    <h1>Welcome to FiiHelp Assistant</h1>
+                    <h1>Welcome to FiiHelp</h1>
                     <p>Your virtual assistant for all questions related to the Faculty of Computer Science (FII). 
                     Get instant answers about admissions, academic programs, student services and more.</p>
                   </div>
@@ -942,13 +942,13 @@ export default function Home() {
                         <div className={styles.slide}>
                           <img src="/informatica1.jpg" alt="Studenti" />
                           <div className={styles.descriptionBox}>
-                            <p>Students working in the Informatics classrooms.</p>
+                            <p>Students working in the Computer Science classrooms.</p>
                           </div>
                         </div>
                         <div className={styles.slide}>
                           <img src="/informatica2.jpg" alt="Studenti" />
                           <div className={styles.descriptionBox}>
-                            <p>Students working in the Informatics classrooms.</p>
+                            <p>Students working in the Computer Science classrooms.</p>
                           </div>
                         </div>
                           <div className={styles.slide}>
