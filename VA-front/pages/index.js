@@ -6,6 +6,8 @@ import ReactMarkdown from 'react-markdown'
 import CircularProgress from '@mui/material/CircularProgress';
 import { ChevronDown, ChevronUp, BookText, Newspaper, Contact, House, Clock9, Menu, University, BanknoteArrowUp, BanknoteArrowDown, Image as ImageIcon, Music, Book } from 'lucide-react';
 import Slider from "react-slick";
+import enTranslations from '../components/translations/en.js';
+import roTranslations from '../components/translations/ro.js';
 
 const settings = {
   dots: true,
@@ -49,45 +51,6 @@ const KEYWORD_URLS = [
   { phrase: "Student Representation in Governance", url: "https://www.uaic.ro/studenti/reprezentarea-studentilor-structurile-de-conducere-2/" }
 ];
 
-// Categories and questions data
-const CATEGORIES = [
-  {
-    name: "Admission",
-    questions: [
-      "What are the admission requirements for Bachelor's programs?",
-      "What documents are needed for Master's admission?",
-      "When does the admission process start?",
-      "Are there any admission exams?"
-    ]
-  },
-  {
-    name: "Academic Life",
-    questions: [
-      "Where can I find my schedule?",
-      "How do I access educational resources?",
-      "What are the exam session periods?",
-      "How does the grading system work?"
-    ]
-  },
-  {
-    name: "Student Services",
-    questions: [
-      "How do I apply for scholarships?",
-      "What housing options are available?",
-      "Where are the canteens located?",
-      "How do I pay my tuition fees?"
-    ]
-  },
-  {
-    name: "University Resources",
-    questions: [
-      "Where can I find the latest university news?",
-      "How do I contact the faculty administration?",
-      "What research opportunities are available?",
-      "Where can I find academic regulations?"
-    ]
-  }
-];
 
 export default function Home() {
     const [userInput, setUserInput] = useState("");
@@ -100,10 +63,16 @@ export default function Home() {
     const [selectedResource, setSelectedResource] = useState(null);
     const resourcesRef = useRef(null);
 
+    const [audioUrl, setAudioUrl] = useState(null);
+    const mediaRecorderRef = useRef(null);
+    const recordInterval = useRef(null);
+
     const messageListRef = useRef(null);
     const textAreaRef = useRef(null);
     const [isRecording, setIsRecording] = useState(false);
     const [recordTime, setRecordTime] = useState(0);
+    const [language, setLanguage] = useState(null);
+
     const [isDarkMode, setIsDarkMode] = useState(() => {
         if (typeof window !== 'undefined') {
             return localStorage.getItem('theme') === 'dark';
@@ -111,20 +80,41 @@ export default function Home() {
         return true;
     });
 
+
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem('language') || 'en';
+    setLanguage(storedLanguage);
+  }, []);
+  
+  // Get translations
+  const t = language === 'en' ? enTranslations : roTranslations;
+
+  const toggleLanguage = () => {
+    setLanguage(prev => {
+      const newLanguage = prev === 'en' ? 'ro' : 'en';
+      localStorage.setItem('language', newLanguage);
+      return newLanguage;
+    });
+  };
+
+
   const resources = [
-    { id: 1, name: 'Schedule', icon: Clock9, url: 'https://edu.info.uaic.ro/orar/' },
-    { id: 2, name: 'Courses', icon: BookText, url: 'https://edu.info.uaic.ro/' },
-    { id: 3, name: 'News', icon: Newspaper, url: 'https://www.info.uaic.ro/noutati/' },
-    { id: 4, name: 'Contact', icon: Contact, url: 'https://www.info.uaic.ro/contact/' },
-    { id: 5, name: 'Admission', icon: University, url: 'https://www.info.uaic.ro/admitere/' },
-    { id: 6, name: 'Scolarship', icon: BanknoteArrowUp, url: 'https://www.uaic.ro/studenti/burse/' },
-    { id: 7, name: 'Taxes', icon: BanknoteArrowDown, url: 'https://plati-taxe.uaic.ro/' },
-    { id: 8, name: 'Housing', icon: House, url: 'https://www.uaic.ro/studenti/cazare/' }
+    { id: 1, name: t.resources.schedule, icon: Clock9, url: 'https://edu.info.uaic.ro/orar/' },
+    { id: 2, name: t.resources.courses, icon: BookText, url: 'https://edu.info.uaic.ro/' },
+    { id: 3, name: t.resources.news, icon: Newspaper, url: 'https://www.info.uaic.ro/noutati/' },
+    { id: 4, name: t.resources.contact, icon: Contact, url: 'https://www.info.uaic.ro/contact/' },
+    { id: 5, name: t.resources.admission, icon: University, url: 'https://www.info.uaic.ro/admitere/' },
+    { id: 6, name: t.resources.scholarship, icon: BanknoteArrowUp, url: 'https://www.uaic.ro/studenti/burse/' },
+    { id: 7, name: t.resources.taxes, icon: BanknoteArrowDown, url: 'https://plati-taxe.uaic.ro/' },
+    { id: 8, name: t.resources.housing, icon: House, url: 'https://www.uaic.ro/studenti/cazare/' }
   ];
 
-  const [audioUrl, setAudioUrl] = useState(null);
-  const mediaRecorderRef = useRef(null);
-  const recordInterval = useRef(null);
+  const CATEGORIES = [
+  t.categories.admission,
+  t.categories.academicLife,
+  t.categories.studentServices,
+  t.categories.universityResources
+];
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -139,10 +129,16 @@ export default function Home() {
     }
   }, [resourcesRef]);
 
+  // useEffect(() => {
+  //   const messageList = messageListRef.current;
+  //   messageList.scrollTop = messageList.scrollHeight;
+  // }, [messages]);
   useEffect(() => {
-    const messageList = messageListRef.current;
-    messageList.scrollTop = messageList.scrollHeight;
-  }, [messages]);
+  if (messageListRef.current) {
+    messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
+  }
+}, [messages]);
+
 
     useEffect(() => {
         if(textAreaRef.current) textAreaRef.current.focus();
@@ -172,7 +168,7 @@ export default function Home() {
 
     const handleError = () => {
         setMessages((prevMessages) => [...prevMessages, {
-            "message": "Oops! There seems to be an error. Please try again.",
+            "message": t.messages.error,
             "type": "apiMessage"
         }]);
         setLoading(false);
@@ -252,7 +248,7 @@ export default function Home() {
           setMessages((prevMessages) => [...prevMessages, { "message": data.answer, "type": "apiMessage" }]);
           setLoading(false);
         } catch (error) {
-          console.error("Error sending quick question:", error);
+          console.error(t.messages.errorQuickQuestion, error);
           handleError();
         }
     };
@@ -358,17 +354,19 @@ export default function Home() {
             setIsRecording(false);
             setMessages(prev => [...prev, {
                 "message": error.message.includes('permission') ? 
-                    "Microphone access denied. Please allow microphone permissions." :
-                    "Recording failed. Please try again.",
+                    t.audioRecorder.audioPermissionError :
+                    t.audioRecorder.audioError,
                 "type": "apiMessage"
             }]);
         }
     };
 
+    if (language === null) return null;
+
     return (
     <>
       <Head>
-        <title>FiiHelp</title>
+        <title>FIIHelp</title>
       </Head>
       <div className={isDarkMode ? styles.dark : styles.light}>
         <div className={styles.topnav}>
@@ -405,6 +403,12 @@ export default function Home() {
               )}
             </div>
           <div className = {styles.navlinks}>
+            <button 
+            onClick={toggleLanguage}
+            className={styles.languageButton}
+          >
+            {language === 'en' ? 'RO' : 'EN'}
+          </button>
             <label className={styles["theme-toggle"]}>
                               <input
                                   type="checkbox"
@@ -430,9 +434,8 @@ export default function Home() {
               {messages.length === 0 ? (
                 <div className={styles.welcomeContainer}>
                   <div className={styles.description}>
-                    <h1>Welcome to FiiHelp</h1>
-                    <p>Your virtual assistant for all questions related to the Faculty of Computer Science (FII). 
-                    Get instant answers about admissions, academic programs, student services, and more.</p>
+                    <h1>{t.welcome.title}</h1>
+                    <p>{t.welcome.description}</p>
                   </div>
                   <div className={styles.center}>
             <div className={styles.cloudform}>
@@ -447,7 +450,7 @@ export default function Home() {
                     type="text"
                     id="userInput"
                     name="userInput"
-                    placeholder={loading ? "Waiting for response..." : "Type your question..."}
+                    placeholder={loading ? t.messages.waitResponse : t.messages.inputPlaceholder}
                     value={userInput}
                     onChange={(e) => setUserInput(e.target.value)}
                     className={styles.textarea}
@@ -459,7 +462,7 @@ export default function Home() {
                     onClick={handleRecord}
                     className={styles.recordButton}
                   >
-                    {isRecording ? "⏹ Stop" : "🎤 Record"}
+                    {isRecording ? t.audioRecorder.stop : t.audioRecorder.start}
                   </button>
 
                   <button
@@ -484,7 +487,7 @@ export default function Home() {
               {isRecording && (
                 <div className={styles.recordingIndicator}>
                   <div className={styles.recordingDot}></div>
-                  ⏱️ Recording: {recordTime}s
+                  ⏱️ {t.audioRecorder.recording}: {recordTime}s
                 </div>
               )}
             </div>
@@ -523,89 +526,89 @@ export default function Home() {
                         <div className={styles.slide}>
                           <img src="/BCU1.jpg" alt="Central University Library" />
                           <div className={styles.descriptionBox}>
-                            <p>Central University Library – A historic library in Iași.</p>
-                            <a href="http://site-vechi.bcu-iasi.ro/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                            <p>{t.slideShowMessages.titles.bcu}</p>
+                            <a href="http://site-vechi.bcu-iasi.ro/" target="_blank" rel="noopener noreferrer">{t.slideShowMessages.exploreMessage}</a>
                           </div>
                         </div>
                         <div className={styles.slide}>
                           <img src="/BCU3.jpg" alt="Central University Library" />
                           <div className={styles.descriptionBox}>
-                            <p>Central University Library – A historic library in Iași.</p>
-                            <a href="http://site-vechi.bcu-iasi.ro/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                            <p>{t.slideShowMessages.titles.bcu}</p>
+                            <a href="http://site-vechi.bcu-iasi.ro/" target="_blank" rel="noopener noreferrer">{t.slideShowMessages.exploreMessage}</a>
                           </div>
                         </div>
                         <div className={styles.slide}>
                           <img src="/GradinaBotanica1.png" alt="Botanical Garden Anastasie Fatu" />
                           <div className={styles.descriptionBox}>
-                            <p>Botanical Garden Anastasie Fatu</p>
-                            <a href="https://www.botanica.uaic.ro/" target="_blank" rel="noopener noreferrer">Explore More</a>
+                            <p>{t.slideShowMessages.titles.botanicalGarden}</p>
+                            <a href="https://www.botanica.uaic.ro/" target="_blank" rel="noopener noreferrer">{t.slideShowMessages.exploreMessage}</a>
                           </div>
                         </div>
                         <div className={styles.slide}>
                           <img src="/GradinaBotanica2.jpg" alt="Botanical Garden Anastasie Fatu" />
                           <div className={styles.descriptionBox}>
-                            <p>Botanical Garden Anastasie Fatu</p>
-                            <a href="https://www.botanica.uaic.ro/" target="_blank" rel="noopener noreferrer">Explore More</a>
+                            <p>{t.slideShowMessages.titles.botanicalGarden}</p>
+                            <a href="https://www.botanica.uaic.ro/" target="_blank" rel="noopener noreferrer">{t.slideShowMessages.exploreMessage}</a>
                           </div>
                         </div>
                         <div className={styles.slide}>
                           <img src="/GradinaBotanica4.webp" alt="Botanical Garden Anastasie Fatu" />
                           <div className={styles.descriptionBox}>
-                            <p>Botanical Garden Anastasie Fatu</p>
-                            <a href="https://www.botanica.uaic.ro/" target="_blank" rel="noopener noreferrer">Explore More</a>
+                            <p>{t.slideShowMessages.titles.botanicalGarden}</p>
+                            <a href="https://www.botanica.uaic.ro/" target="_blank" rel="noopener noreferrer">{t.slideShowMessages.exploreMessage}</a>
                           </div>
                         </div>
                          <div className={styles.slide}>
                           <img src="/GradinaBotanica6.webp" alt="Botanical Garden Anastasie Fatu" />
                           <div className={styles.descriptionBox}>
-                            <p>Botanical Garden Anastasie Fatu</p>
-                            <a href="https://www.botanica.uaic.ro/" target="_blank" rel="noopener noreferrer">Explore More</a>
+                            <p>{t.slideShowMessages.titles.botanicalGarden}</p>
+                            <a href="https://www.botanica.uaic.ro/" target="_blank" rel="noopener noreferrer">{t.slideShowMessages.exploreMessage}</a>
                           </div>
                         </div>
                           <div className={styles.slide}>
                           <img src="/GradinaBotanica9.webp" alt="Botanical Garden Anastasie Fatu" />
                           <div className={styles.descriptionBox}>
-                            <p>Botanical Garden Anastasie Fatu</p>
-                            <a href="https://www.botanica.uaic.ro/" target="_blank" rel="noopener noreferrer">Explore More</a>
+                            <p>{t.slideShowMessages.titles.botanicalGarden}</p>
+                            <a href="https://www.botanica.uaic.ro/" target="_blank" rel="noopener noreferrer">{t.slideShowMessages.exploreMessage}</a>
                           </div>
                         </div>
                         <div className={styles.slide}>
                           <img src="/informatica1.jpg" alt="Studenti" />
                           <div className={styles.descriptionBox}>
-                            <p>Students working in the Computer Science classrooms.</p>
+                            <p>{t.slideShowMessages.titles.fiifaculty}</p>
                           </div>
                         </div>
                         <div className={styles.slide}>
                           <img src="/informatica2.jpg" alt="Studenti" />
                           <div className={styles.descriptionBox}>
-                            <p>Students working in the Computer Science classrooms.</p>
+                            <p>{t.slideShowMessages.titles.fiifaculty}</p>
                           </div>
                         </div>
                           <div className={styles.slide}>
                           <img src="/Gaudeamus.webp" alt="Gaudeamus Canteen" />
                           <div className={styles.descriptionBox}>
-                            <p>Gaudeamus Canteen</p>
+                            <p>{t.slideShowMessages.titles.canteen}</p>
                           </div>
                         </div>
                         <div className={styles.slide}>
                           <img src="/muzeuluniversitatii.jpg" alt="University Museum" />
                           <div className={styles.descriptionBox}>
-                            <p>University Museum</p>
-                            <a href="https://www.uaic.ro/muzeul-universitatii-alexandru-ioan-cuza/" target="_blank" rel="noopener noreferrer">Explore More</a>
+                            <p>{t.slideShowMessages.titles.museum}</p>
+                            <a href="https://www.uaic.ro/muzeul-universitatii-alexandru-ioan-cuza/" target="_blank" rel="noopener noreferrer">{t.slideShowMessages.exploreMessage}</a>
                           </div>
                         </div>
                         <div className={styles.slide}>
                           <img src="/salaPasilorPierduti1.jpg" alt="Sala Pasilor Pierduti" />
                           <div className={styles.descriptionBox}>
                             <p>"Sala Pasilor Pierduti"</p>
-                            <a href="https://www.uaic.ro/despre-uaic/prezentare-sala-pasilor-pierduti/" target="_blank" rel="noopener noreferrer">Explore More</a>
+                            <a href="https://www.uaic.ro/despre-uaic/prezentare-sala-pasilor-pierduti/" target="_blank" rel="noopener noreferrer">{t.slideShowMessages.exploreMessage}</a>
                           </div>
                         </div>
                           <div className={styles.slide}>
                           <img src="/sala_pasilor_pierduti.jpg" alt="Sala Pasilor Pierduti" />
                           <div className={styles.descriptionBox}>
                             <p>"Sala Pasilor Pierduti"</p>
-                            <a href="https://www.uaic.ro/despre-uaic/prezentare-sala-pasilor-pierduti/" target="_blank" rel="noopener noreferrer">Explore More</a>
+                            <a href="https://www.uaic.ro/despre-uaic/prezentare-sala-pasilor-pierduti/" target="_blank" rel="noopener noreferrer">{t.slideShowMessages.exploreMessage}</a>
                           </div>
                         </div>
                       </Slider>
@@ -619,8 +622,8 @@ export default function Home() {
                       <img src="/logoFii.png" alt="Logo 2" className={styles.footerLogo} />
                     </div>
                     <div className={styles.footerText}>
-                      <p>© 2025 FiiHelp Assistant. Developed by students of the Master's program in Computational Linguistics under the guidance of Ionut Pistol.</p>
-                      <p>Contact us at: fiihelpuaicassistant@gmail.com</p>
+                      <p>{t.footer.aboutUs}</p>
+                      <p>{t.footer.contact}: fiihelpuaicassistant@gmail.com</p>
                     </div>
                   </footer>
                 </div>
@@ -665,7 +668,7 @@ export default function Home() {
                     type="text"
                     id="userInput"
                     name="userInput"
-                    placeholder={loading ? "Waiting for response..." : "Type your question..."}
+                    placeholder={loading ? t.messages.waitResponse : t.messages.inputPlaceholder}
                     value={userInput}
                     onChange={(e) => setUserInput(e.target.value)}
                     className={styles.textarea}
@@ -677,7 +680,7 @@ export default function Home() {
                     onClick={handleRecord}
                     className={styles.recordButton}
                   >
-                    {isRecording ? "⏹ Stop" : "🎤 Record"}
+                    {isRecording ? t.audioRecorder.stop : t.audioRecorder.start}
                   </button>
 
                   <button
@@ -702,7 +705,7 @@ export default function Home() {
               {isRecording && (
                 <div className={styles.recordingIndicator}>
                   <div className={styles.recordingDot}></div>
-                  ⏱️ Recording: {recordTime}s
+                  ⏱️ {t.audioRecorder.recording}: {recordTime}s
                 </div>
               )}
             </div>
