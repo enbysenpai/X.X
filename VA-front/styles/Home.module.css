@@ -1207,25 +1207,23 @@
   .inputWrap {
     display: flex !important;
     justify-content: center !important;
+    align-items: stretch !important;
     gap: 10px !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 auto !important;
     flex-wrap: nowrap !important;
-    align-items: center !important;
   }
 
   .textarea {
     width: 100% !important;
+    max-width: 100% !important;
     font-size: 0.85rem !important;
     padding: 0.6rem !important;
     min-height: 36px !important;
     max-height: 72px !important;
     box-sizing: border-box !important;
     border-radius: 10px !important;
-    flex-grow: 1 !important;
-    min-width: 0 !important;
-    max-width: none !important;
   }
 
   .recordButton,
@@ -1418,19 +1416,15 @@
 
   .inputArea {
     padding: 12px 15px 15px 15px !important;
-    width: 100vw !important; 
-    margin: 0 !important; 
+    width: 100vw !important;
+    margin: 0 !important;
     left: 0 !important;
     right: 0 !important;
     box-sizing: border-box;
   }
 
   .inputWrap {
-    display: flex !important;
-    gap: 10px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    align-items: center !important;
+    gap: 8px !important;
   }
 
   .textarea {
@@ -1448,22 +1442,16 @@
   .inputWrap > .recordButton,
   .inputWrap > .generatebutton {
     height: 56px !important;
+    width: 140px !important;
     font-size: 12px !important; 
     border-radius: 28px !important; 
     flex-shrink: 0 !important;
-    display: flex !important;
-    gap: 10px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    align-items: center !important;
   }
 
   .inputWrap > :not(.textarea) {
     display: flex !important;
     justify-content: center !important;
     gap: 15px !important;
-    flex-grow: 1 !important;
-    min-width: 0 !important;
   }
 
   .messagelist {
@@ -1526,7 +1514,7 @@
   }
 
   .cloud {
-    height: calc(100vh - 55px) !important; 
+    height: calc(100vh - 55px) !important;
     width: 100vw !important;
     padding-top: 55px !important;
     overflow-x: hidden !important;
@@ -1595,6 +1583,9 @@
     padding: 0.75rem 1rem !important;
     font-size: 1rem !important;
     border-radius: 12px !important;
+    flex-grow: 1 !important;
+    min-width: 0 !important;
+    max-width: none !important;
   }
 
   .recordButton,
@@ -1620,7 +1611,3 @@
     text-overflow: ellipsis !important;
   }
 }
-
-
-
-
