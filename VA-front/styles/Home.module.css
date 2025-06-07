@@ -592,61 +592,6 @@
   color: var(--text, #000);
 }
 
-/* === MOBILE === */
-@media (max-width: 600px) {
-  .main {
-    padding: 1rem;
-    max-height: 90vh;
-  }
-
-  .cloud {
-    width: 22rem;
-    height: 28rem;
-  }
-
-  .inputArea {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .topnav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-  }
-
-  .themeToggle {
-    padding: 0.4rem 0.75rem;
-    border-radius: 0.5rem;
-    background: transparent;
-    border: 1px solid #4b4b4b;
-    color: #ececf1;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.2s ease;
-  }
-
-  .themeToggle:hover {
-    background: #1f2227;
-  }
-
-  .navlogo {
-    font-size: 1.25rem;
-    width: 20rem;
-  }
-
-  .footer {
-    font-size: 0.7rem;
-  }
-
-  .markdownanswer code {
-    white-space: pre-wrap !important;
-  }
-}
-
-
 /* Audio player styling */
 .audioPlayer {
   max-width: 100%;
@@ -1247,8 +1192,21 @@
   text-align: center;
 }
 
-/* Mobile responsiveness */
+/* === MOBILE CHANGES === */
+
 @media (max-width: 768px) {
+  .sliderWrapper {
+    width: 95%;
+  }
+  
+  .sliderWrapper img {
+    max-height: 300px;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
   .footerCenter {
     flex-direction: column;
     gap: 10px;
@@ -1268,81 +1226,33 @@
   }
 }
 
-@media (max-width: 480px) {
-  .universityName {
-    font-size: 14px;
-  }
-  
-  .facultyName {
-    font-size: 12px;
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .sidebarContent {
-    padding: 12px;
-  }
-  
-  .facultyResource {
-    padding: 12px;
-  }
-  
-  .facultyResourceTitle {
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  .sliderWrapper {
-    width: 95%;
-  }
-  
-  .sliderWrapper img {
-    max-height: 300px;
-  }
-}
-
-/* Here lies the modified part */
-
-/* Enhanced responsive design for 620px and below with input bar below header */
-
 @media (max-width: 620px) {
-  /* Keep main container at full viewport height and width */
   .main {
     height: 100vh;
     width: 100vw;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden; 
     overflow-y: auto;
     position: relative;
     box-sizing: border-box;
   }
 
-  /* Position input area below header instead of fixed at bottom */
   .inputArea {
-    position: relative !important; /* Changed from fixed */
+    position: relative !important; 
     bottom: auto !important;
     left: 0 !important;
     right: 0 !important;
-    width: 100vw !important; /* Full viewport width */
+    width: 100vw !important;
     max-width: 100vw !important;
-    margin: 0 !important; /* Remove margins to prevent overflow */
-    padding: 15px 20px; /* Top, right, bottom, left */
+    margin: 0 !important; 
+    padding: 15px 20px; 
     background: var(--bg) !important;
-    border: none !important; /* Remove all borders */
-    box-shadow: none !important; /* Remove shadow */
+    border: none !important; 
+    box-shadow: none !important; 
     z-index: 100 !important;
     box-sizing: border-box;
   }
 
-  /* Center the input wrapper within the container */
   .inputWrap {
     display: flex !important;
     justify-content: center !important;
@@ -1351,80 +1261,74 @@
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 auto;
-    flex-wrap: wrap !important; /* Allow wrapping on very small screens */
+    flex-wrap: wrap !important; 
   }
 
-  /* Shrink textarea but keep it centered */
   .textarea {
-    width: 60% !important; /* Takes 60% of available width but centered */
+    width: 60% !important; 
     min-width: 200px !important;
     max-width: 400px !important;
-    font-size: 0.85rem !important; /* Shrunk font */
-    padding: 0.6rem !important; /* Shrunk padding */
-    min-height: 36px !important; /* Shrunk height */
-    max-height: 72px !important; /* Shrunk max height */
-    border-radius: 18px !important; /* More rounded for mobile */
+    font-size: 0.85rem !important; 
+    padding: 0.6rem !important; 
+    min-height: 36px !important; 
+    max-height: 72px !important; 
+    border-radius: 18px !important; 
     border: 1px solid #30373d;
     resize: none;
-    flex: 1 !important; /* Allow textarea to grow */
+    flex: 1 !important; 
   }
 
-  /* Make buttons bigger for better usability */
   .recordButton,
   .generatebutton {
-    height: 48px !important; /* Increased from 36px */
-    width: 48px !important; /* Increased from 36px */
-    font-size: 10px !important; /* Smaller font to fit text inside */
-    padding: 0 !important; /* Remove padding for icon-only buttons */
-    border-radius: 50% !important; /* Make circular */
+    height: 48px !important; 
+    width: 48px !important; 
+    font-size: 10px !important; 
+    padding: 0 !important; 
+    border-radius: 50% !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    flex-shrink: 0 !important; /* Prevent shrinking */
-    text-align: center !important; /* Center text */
-    line-height: 1.1 !important; /* Tight line height for better fit */
+    flex-shrink: 0 !important; 
+    text-align: center !important; 
+    line-height: 1.1 !important; 
   }
 
-  /* Hide text in buttons on mobile, keep only icons */
   .recordButton span:not(.icon),
   .generatebutton span:not(.icon) {
-    display: inline !important; /* Show text instead of hiding */
+    display: inline !important; 
     font-size: inherit !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
   }
 
-  /* Adjust main content area - no need to account for fixed input anymore */
   .cloud {
-    height: calc(100vh - 60px) !important; /* Only account for header height */
+    height: calc(100vh - 60px) !important; 
     width: 100vw !important;
     padding-bottom: 0;
     margin-bottom: 0;
-    overflow-x: hidden !important; /* Prevent horizontal scrolling */
+    overflow-x: hidden !important; 
     overflow-y: auto;
-    padding-top: 60px; /* Account for header */
+    padding-top: 60px; 
     box-sizing: border-box;
   }
 
-  /* Adjust message list - no need for bottom padding for fixed input */
   .messagelist {
-    padding: 1rem 15px 15px 15px !important; /* Normal bottom padding */
+    padding: 1rem 15px 15px 15px !important; 
     height: 100% !important;
     width: 100% !important;
     box-sizing: border-box;
-    overflow-x: hidden !important; /* Prevent horizontal scrolling */
+    overflow-x: hidden !important; 
     overflow-y: auto;
   }
 
-  /* Shrink chat bubbles */
   .userBubble,
   .botText {
     max-width: 85% !important;
-    font-size: 0.8rem !important; /* Shrunk font */
-    padding: 8px 12px !important; /* Shrunk padding */
+    font-size: 0.8rem !important; 
+    padding: 8px 12px !important;
     line-height: 1.3 !important;
-    margin-bottom: 15px !important; /* Reduced margins */
+    margin-bottom: 15px !important; 
   }
 
   .userBubble {
@@ -1435,7 +1339,6 @@
     border-radius: 15px 15px 15px 4px !important;
   }
 
-  /* Fixed top navigation - stays in place, doesn't scroll */
   .topnav {
     height: 60px !important;
     width: 100vw !important;
@@ -1444,13 +1347,12 @@
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
-    z-index: 1000 !important; /* Higher z-index to stay above everything */
+    z-index: 1000 !important;
     box-sizing: border-box;
-    overflow: visible !important; /* Allow menu to overflow outside topbar */
+    overflow: visible !important; 
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    /* Let topbar inherit original colors naturally - no overrides */
   }
 
   .navlogo {
@@ -1458,30 +1360,26 @@
     flex-shrink: 0 !important;
   }
 
-  /* Menu button positioned in the center area - preserve ALL original styling */
   .menu-button,
   .hamburger-menu,
   .nav-menu-button,
   .topnav button:not(.theme-toggle) {
     position: relative !important;
-    z-index: 1001 !important; /* Above topbar but below dropdown */
+    z-index: 1001 !important; 
     margin-left: auto !important;
     margin-right: 1rem !important;
     cursor: pointer !important;
-    /* Remove ALL color overrides to preserve original styling */
   }
 
-  /* Sidebar and overlay elements should appear above main topbar */
   .sidebar,
   .side-panel,
   .overlay,
   .modal,
   .resources-sidebar,
   .sidebar-overlay {
-    z-index: 1100 !important; /* Above main topbar */
+    z-index: 1100 !important; 
   }
 
-  /* Sidebar topbar/header should be above main topbar */
   .sidebar .topbar,
   .sidebar .header,
   .sidebar .sidebar-header,
@@ -1495,13 +1393,12 @@
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    z-index: 1150 !important; /* Highest z-index for sidebar header */
+    z-index: 1150 !important; 
     background: var(--bg) !important;
     height: auto !important;
     min-height: 60px !important;
   }
 
-  /* Close button (x) should be easily accessible */
   .sidebar .close-button,
   .sidebar .close-btn,
   .sidebar button[aria-label*="close"],
@@ -1512,12 +1409,11 @@
   .resources-sidebar .close-btn,
   .close-sidebar,
   .sidebar-close {
-    z-index: 1200 !important; /* Highest priority for close button */
+    z-index: 1200 !important; 
     position: relative !important;
     cursor: pointer !important;
   }
 
-  /* Theme toggle positioned on far right, vertically centered */
   .theme-toggle {
     width: 45px !important;
     height: 22px !important;
@@ -1528,28 +1424,25 @@
     flex-shrink: 0 !important;
   }
 
-  /* Menu dropdown - preserve original colors completely */
   .menu-dropdown,
   .nav-menu,
   .dropdown-menu,
   .mobile-menu,
   .topnav .dropdown,
   .topnav .menu-list {
-    position: absolute !important; /* Changed from fixed to absolute */
-    top: 100% !important; /* Position directly below the topbar */
+    position: absolute !important; 
+    top: 100% !important; 
     left: 0 !important;
     right: 0 !important;
     width: 100vw !important;
-    z-index: 999 !important; /* Below topbar but above content */
+    z-index: 999 !important; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
     max-height: calc(100vh - 60px) !important;
     overflow-y: auto !important;
     box-sizing: border-box !important;
-    transform: translateY(0) !important; /* Ensure it appears below topbar */
-    /* Let menu inherit original background and border colors naturally */
+    transform: translateY(0) !important; 
   }
 
-  /* Ensure menu content is properly styled */
   .menu-dropdown ul,
   .nav-menu ul,
   .dropdown-menu ul,
@@ -1574,7 +1467,6 @@
     padding: 1rem 1.5rem !important;
     text-decoration: none !important;
     font-size: 0.9rem !important;
-    /* Let text colors inherit naturally */
   }
 
   .menu-dropdown a:hover,
@@ -1602,77 +1494,73 @@
   }
 
   .icon {
-    font-size: 10px !important; /* Shrunk */
+    font-size: 10px !important; 
   }
 
-  /* Shrink welcome container elements */
   .welcomeContainer {
     padding: 1rem 15px !important;
     margin-bottom: 1rem !important;
   }
 
   .description h1 {
-    font-size: 1.4rem !important; /* Shrunk */
+    font-size: 1.4rem !important; 
     margin-bottom: 0.5rem !important;
   }
 
   .description p {
-    font-size: 0.85rem !important; /* Shrunk */
+    font-size: 0.85rem !important; 
     line-height: 1.4 !important;
   }
 
   .apptitle {
-    font-size: 1.8rem !important; /* Shrunk */
+    font-size: 1.8rem !important; 
   }
 
   .appdescription {
-    font-size: 0.85rem !important; /* Shrunk */
+    font-size: 0.85rem !important;
     margin: 0.5rem !important;
   }
 
-  /* Shrink categories */
   .categoriesContainer {
-    grid-template-columns: 1fr !important; /* Single column */
+    grid-template-columns: 1fr !important;
     gap: 0.8rem !important;
     margin-top: 1rem !important;
     padding: 0 15px !important;
   }
 
   .categoryBox {
-    padding: 0.8rem !important; /* Shrunk */
+    padding: 0.8rem !important; 
     border-radius: 8px !important;
   }
 
   .categoryBox h3 {
-    font-size: 0.9rem !important; /* Shrunk */
+    font-size: 0.9rem !important; 
     margin: 0 0 0.5rem 0 !important;
   }
 
-  /* Shrink quick questions */
   .quickQuestionsContainer {
     padding: 0.5rem 15px !important;
   }
 
   .quickQuestionsContainer h2 {
-    font-size: 1.1rem !important; /* Shrunk */
+    font-size: 1.1rem !important; 
     margin-bottom: 0.5rem !important;
   }
 
   .quickQuestionsContainer button {
     padding: 0.5rem 0.7rem !important;
     margin-bottom: 0.3rem !important;
-    font-size: 0.8rem !important; /* Shrunk */
+    font-size: 0.8rem !important; 
     border-radius: 6px !important;
   }
 
   .questionItem {
     padding: 0.5rem 0.7rem !important;
     margin: 0.2rem 0 !important;
-    font-size: 0.75rem !important; /* Shrunk */
+    font-size: 0.75rem !important; 
     border-radius: 5px !important;
   }
 
-  /* Shrink footer */
   .footer {
     padding: 0.5rem 15px !important;
     font-size: 0.65rem !important;
@@ -1690,7 +1578,6 @@
     font-size: 10px !important;
   }
 
-  /* Shrink slideshow */
   .sliderWrapper img {
     max-height: 180px !important;
   }
@@ -1701,7 +1588,6 @@
     border-radius: 3px !important;
   }
 
-  /* Shrink resource elements */
   .facultyResourceButton {
     padding: 4px 8px !important;
     font-size: 10px !important;
@@ -1714,40 +1600,108 @@
     font-size: 10px !important;
   }
 
-  /* Enhanced dark/light mode support for input area */
   .dark .inputArea {
     background: var(--bg) !important;
-    border: none !important; /* Remove border */
-    box-shadow: none !important; /* Remove shadow */
+    border: none !important; 
+    box-shadow: none !important; 
   }
 
   .light .inputArea {
     background: var(--bg) !important;
-    border: none !important; /* Remove border */
-    box-shadow: none !important; /* Remove shadow */
+    border: none !important; 
+    box-shadow: none !important; 
   }
-  
-  /* Remove dark/light mode color overrides for menu to preserve original colors */
 }
 
-/* Extra small screens - input elements wrap to multiple lines */
+@media (max-width: 600px) {
+  .main {
+    padding: 1rem;
+    max-height: 90vh;
+  }
+
+  .cloud {
+    width: 22rem;
+    height: 28rem;
+  }
+
+  .inputArea {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+  }
+
+  .themeToggle {
+    padding: 0.4rem 0.75rem;
+    border-radius: 0.5rem;
+    background: transparent;
+    border: 1px solid #4b4b4b;
+    color: #ececf1;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .themeToggle:hover {
+    background: #1f2227;
+  }
+
+  .navlogo {
+    font-size: 1.25rem;
+    width: 20rem;
+  }
+
+  .footer {
+    font-size: 0.7rem;
+  }
+
+  .markdownanswer code {
+    white-space: pre-wrap !important;
+  }
+}
+
 @media (max-width: 480px) {
+  .sidebarContent {
+    padding: 12px;
+  }
+  
+  .facultyResource {
+    padding: 12px;
+  }
+  
+  .facultyResourceTitle {
+    font-size: 15px;
+  }
+
+  .universityName {
+    font-size: 14px;
+  }
+  
+  .facultyName {
+    font-size: 12px;
+  }
+
   .inputArea {
     padding: 12px 15px 15px 15px !important;
-    width: 100vw !important; /* Ensure full viewport width */
-    margin: 0 !important; /* Remove margins to prevent overflow */
+    width: 100vw !important; 
+    margin: 0 !important; 
     left: 0 !important;
     right: 0 !important;
   }
 
-  /* Allow input elements to wrap on small screens */
   .inputWrap {
-    flex-direction: column !important; /* Stack vertically on very small screens */
+    flex-direction: column !important; 
     gap: 8px !important;
   }
 
   .textarea {
-    width: 100% !important; /* Full width when stacked */
+    width: 100% !important; 
     min-width: auto !important;
     max-width: none !important;
     font-size: 0.8rem !important;
@@ -1756,17 +1710,15 @@
     max-height: 64px !important;
   }
 
-  /* Create a button container for horizontal layout with larger width buttons */
   .inputWrap > .recordButton,
   .inputWrap > .generatebutton {
-    height: 56px !important; /* Keep same height */
-    width: 140px !important; /* Even larger width for separate lines */
-    font-size: 12px !important; /* Slightly larger font */
-    border-radius: 28px !important; /* Pill shape */
+    height: 56px !important; 
+    width: 140px !important; 
+    font-size: 12px !important; 
+    border-radius: 28px !important; 
     flex-shrink: 0 !important;
   }
 
-  /* Create a button row when textarea is full width */
   .inputWrap > :not(.textarea) {
     display: flex !important;
     justify-content: center !important;
@@ -1774,7 +1726,7 @@
   }
 
   .messagelist {
-    padding: 1rem 10px 15px 10px !important; /* Normal bottom padding */
+    padding: 1rem 10px 15px 10px !important; 
   }
 
   .topnav {
@@ -1783,17 +1735,15 @@
     padding: 0.4rem 0.8rem !important;
     left: 0 !important;
     box-sizing: border-box;
-    overflow: visible !important; /* Allow menu to overflow */
+    overflow: visible !important; 
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     position: fixed !important;
     top: 0 !important;
     z-index: 1000 !important;
-    /* Let topbar inherit original colors naturally - no background override */
   }
 
-  /* Menu button for smaller screens - preserve ALL original styling */
   .menu-button,
   .hamburger-menu,
   .nav-menu-button,
@@ -1803,10 +1753,8 @@
     margin-left: auto !important;
     margin-right: 1rem !important;
     cursor: pointer !important;
-    /* Remove ALL color overrides to preserve original styling */
   }
 
-  /* Theme toggle positioned on far right, vertically centered */
   .theme-toggle {
     width: 45px !important;
     height: 22px !important;
@@ -1817,7 +1765,6 @@
     flex-shrink: 0 !important;
   }
 
-  /* Adjust menu position for smaller screens - preserve original colors */
   .menu-dropdown,
   .nav-menu,
   .dropdown-menu,
@@ -1825,7 +1772,7 @@
   .topnav .dropdown,
   .topnav .menu-list {
     position: absolute !important;
-    top: 100% !important; /* Position directly below the smaller topbar */
+    top: 100% !important; 
     left: 0 !important;
     right: 0 !important;
     width: 100vw !important;
@@ -1835,11 +1782,10 @@
     overflow-y: auto !important;
     box-sizing: border-box !important;
     transform: translateY(0) !important;
-    /* Let menu inherit original background and border colors naturally */
   }
 
   .cloud {
-    height: calc(100vh - 55px) !important; /* Only account for header */
+    height: calc(100vh - 55px) !important; 
     width: 100vw !important;
     padding-top: 55px !important;
     overflow-x: hidden !important;
