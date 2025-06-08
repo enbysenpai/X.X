@@ -1397,11 +1397,11 @@
   .sidebarContent {
     padding: 12px;
   }
-  
+
   .facultyResource {
     padding: 12px;
   }
-  
+
   .facultyResourceTitle {
     font-size: 15px;
   }
@@ -1409,7 +1409,7 @@
   .universityName {
     font-size: 14px;
   }
-  
+
   .facultyName {
     font-size: 12px;
   }
@@ -1424,7 +1424,11 @@
   }
 
   .inputWrap {
-    gap: 8px !important;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
   }
 
   .textarea {
@@ -1443,8 +1447,8 @@
   .inputWrap > .generatebutton {
     height: 56px !important;
     width: 140px !important;
-    font-size: 12px !important; 
-    border-radius: 28px !important; 
+    font-size: 12px !important;
+    border-radius: 28px !important;
     flex-shrink: 0 !important;
   }
 
@@ -1452,10 +1456,15 @@
     display: flex !important;
     justify-content: center !important;
     gap: 15px !important;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
   }
 
   .messagelist {
-    padding: 1rem 10px 15px 10px !important; 
+    padding: 1rem 10px 15px 10px !important;
   }
 
   .topnav {
@@ -1464,7 +1473,7 @@
     padding: 0.4rem 0.8rem !important;
     left: 0 !important;
     box-sizing: border-box;
-    overflow: visible !important; 
+    overflow: visible !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
@@ -1501,7 +1510,7 @@
   .topnav .dropdown,
   .topnav .menu-list {
     position: absolute !important;
-    top: 100% !important; 
+    top: 100% !important;
     left: 0 !important;
     right: 0 !important;
     width: 100vw !important;
@@ -1543,6 +1552,7 @@
     padding: 0.75rem 1rem !important;
     font-size: 1rem !important;
     border-radius: 12px !important;
+    flex: 2;
   }
 
   .recordButton,
@@ -1557,6 +1567,8 @@
     align-items: center !important;
     justify-content: center !important;
     box-sizing: border-box !important;
+    flex: 1; /* allow buttons to shrink proportionally */
+    max-width: 80px; /* optional limit */
   }
 }
 
