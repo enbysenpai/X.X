@@ -1067,12 +1067,18 @@ export default function Home() {
                     {isRecording ? t.audioRecorder.stop : t.audioRecorder.start}
                   </button>
 
-                    <button
-                        type="submit"
-                        disabled={loading}
-                        className={styles.generatebutton}
-                    >
-                        ⬆️
+                  <button
+                      type="submit"
+                      disabled={loading}
+                      className={styles.generatebutton}
+                  >
+                    {loading ? (
+                        <div className={styles.loadingwheel}>
+                          <CircularProgress color="inherit" size={20}/>
+                        </div>
+                    ) : (
+                        ">"
+                    )}
                   </button>
                 </div>
               </form>
