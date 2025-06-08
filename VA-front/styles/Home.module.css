@@ -54,7 +54,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   font-size: 1.5rem;
   background: var(--input-bg);
   border-bottom: 1px solid #1f2227;
@@ -242,8 +242,12 @@
   transition: background 0.2s ease;
 }
 
-.generatebutton:hover {
+.dark .generatebutton:hover {
   background: #1f2227;
+}
+
+.light .generatebutton:hover {
+  background: #cbc6c6;
 }
 
 .generatebutton:disabled {
@@ -269,11 +273,13 @@
 .userBubble {
   align-self: flex-end;
   border-radius: 18px 18px 4px 18px;
+  margin-bottom: 35px;
 }
 
 .botText {
   align-self: flex-start;
   border-radius: 18px 18px 18px 4px;
+  margin-bottom: 10px;
 }
 
 /* === MESSAGES LIST === */
@@ -284,7 +290,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  /* gap: 35px; */
   border-radius: 0.5rem;
   padding-top: 4.5rem;
   padding-right: 1rem;
@@ -423,11 +429,11 @@
 }
 
 .dark {
-  --bg: #070809;
-  --text: #ECECF1;
-  --input-bg: #2a2b2d;
-  --bubble-bg: #2a2b2d;
-  --button-bg: #2a2b2d;
+  --bg:#3C5B6F;
+  --text: #EAE4D5;
+  --input-bg: #153448;
+  --bubble-bg: #153448;
+  --button-bg: #147487;
 }
 
 /* Audio-specific message styling */
@@ -437,13 +443,903 @@
   padding: 8px 0;
 }
 
-.light .recordButton,
+.light .recordButton{
+  background-color: #147487;
+  color: white;
+}
 .dark .recordButton {
-  background-color: #ef4444;
+  background-color: #0a3a44;
   color: white;
 }
 
-/* === MOBILE === */
+/* === RESOURCES === */
+.resourcesContainer {
+  position: relative;
+  display: inline-block;
+  margin-right: auto;
+}
+
+.resourcesButton {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  height: 32px;
+}
+
+.dark .resourcesButton {
+  background-color: var(--bg);
+  color: white;
+}
+
+.dark .resourcesButton:hover {
+  background-color: #1b1b1b;
+}
+
+.light .resourcesButton {
+  background-color: white;
+  color: black;
+}
+
+.light .resourcesButton:hover {
+  background-color: #cbc6c6;
+}
+
+.resourcesDropdown {
+  position: absolute;
+  left: 0;  
+  top: 100%;
+  margin-top: 5px;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 200px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.dark .resourcesDropdown {
+  background-color: #153448;
+  border-color: #153448;
+}
+
+.light .resourcesDropdown {
+  background-color: white;
+  border-color: #e5e5e5;
+}
+
+.resourcesDropdown ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resourceItem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 15px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.resourceItem:hover {
+  text-decoration: none;
+}
+
+.dark .resourceItem {
+  color: #ececf1;
+}
+
+.dark .resourceItem:hover {
+  background-color: #147487;
+}
+
+.light .resourceItem {
+  color: #202123;
+}
+
+.light .resourceItem:hover {
+  background-color: #f1f1f1;
+}
+
+.resourceIcon {
+  margin-right: 10px;
+}
+
+/* === QUESTIONS === */
+.quickQuestionsContainer {
+  width: 100%;
+  padding: 1rem;
+}
+
+/* For the quick questions component */
+.quickQuestionsContainer h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.quickQuestionsContainer button {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+.dark .quickQuestionsContainer button {
+  background: var(--bubble-bg);
+  color: var(--text, #000);
+}
+
+/* Audio player styling */
+.audioPlayer {
+  max-width: 100%;
+  margin-top: 0.5rem;
+  background: #2a2b2d;
+  border-radius: 16px;
+  padding: 8px;
+}
+
+.audioPlayer::-webkit-media-controls-panel {
+  background-color: #2a2b2d;
+  border-radius: 16px;
+}
+
+.audioPlayer::-webkit-media-controls-play-button,
+.audioPlayer::-webkit-media-controls-mute-button {
+  filter: invert(0.8);
+}
+
+/* Recording indicator */
+.recordingIndicator {
+  margin-top: 8px;
+  color: #147487;
+  font-weight: 500;
+  text-align: right;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.recordingDot {
+  width: 8px;
+  height: 8px;
+  background-color: #147487;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.welcomeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.description {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.description h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.description p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.categoriesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 2rem;
+  max-width: 800px;
+}
+
+.categoryBox {
+  background-color: var(--background-secondary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+.categoryBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.categoryBox h3 {
+  font-size: 1.2rem;
+  margin: 0 0 1rem 0;
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Questions List Styles */
+.questionsList {
+  margin-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.questionItem {
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0;
+  background-color: #a9d5dd;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color-light);
+}
+
+.questionItem:hover {
+  background-color: var(--button-hover);
+  transform: translateX(5px);
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode specific styles */
+.dark .categoryBox {
+  background-color: #547792;
+  border-color: var(--border-color-dark);
+}
+
+.dark .questionItem {
+  background-color: #0a3a44;
+  border-color: var(--border-color-light-dark);
+}
+
+.facultyResourceButtonContainer {
+  margin: 4px 0 12px 0;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+  width: 100%;
+}
+
+.facultyResourceButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  /* background-color: #1f2937; */
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.light .facultyResourceButton {
+  background-color: #e0e0dc;
+  color: black;
+}
+
+.dark .facultyResourceButton {
+  background-color: #153448;
+}
+
+.facultyResourceButton:hover {
+  background-color: #374151;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.facultyIcon {
+  font-size: 16px;
+}
+
+/* Sidebar Overlay */
+.sidebarOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  /* backdrop-filter: blur(2px); */
+}
+
+/* Sidebar Container */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 400px;
+  background-color: white;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Sidebar Header */
+.sidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+}
+
+.sidebarHeader h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+/* Sidebar Content */
+.sidebarContent {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.dark .sidebarContent {
+  background-color: #3C5B6F;
+}
+
+/* Shop Item Styles */
+.facultyResource {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  transition: all 0.2s ease;
+}
+
+.facultyResource:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #d1d5db;
+}
+
+.facultyResourceHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.facultyLogo {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.facultyName {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.facultyResourceTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.facultyResourceDescription {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+}
+
+.facultyResourceDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.facultyButton {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #3b82f6;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.facultyButton:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* Dark Mode Styles */
+.dark .sidebar {
+  background-color: #1f2937;
+  color: white;
+}
+
+.dark .sidebarHeader {
+  background-color: #153448;
+  border-bottom-color: #374151;
+}
+
+.dark .sidebarHeader h3 {
+  color: white;
+}
+
+.dark .closeButton {
+  color: #9ca3af;
+}
+
+.dark .closeButton:hover {
+  background-color: #374151;
+  color: white;
+}
+
+.dark .facultyResource {
+  background-color: #374151;
+  border-color: #4b5563;
+}
+
+.dark .facultyResource:hover {
+  border-color: #6b7280;
+}
+
+.dark .facultyResourceTitle {
+  color: white;
+}
+
+.dark .facultyResourceDescription {
+  color: #d1d5db;
+}
+
+.dark .facultyName {
+  color: #d1d5db;
+}
+
+.slideshowContainer {
+  width: 100wv;
+  margin: 6rem auto 2rem; 
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+
+.sliderWrapper {
+  width: 100vw;
+  max-width: 1500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.sliderWrapper img {
+  width: 100vw;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 0;
+  margin: 0 auto;
+  display: block;
+}
+
+.slide {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Universal menu overlay rules - applies to ALL screen widths */
+.menu-dropdown,
+.nav-menu,
+.dropdown-menu,
+.mobile-menu,
+.topnav .dropdown,
+.topnav .menu-list {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100vw !important;
+  z-index: 999 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  max-height: calc(100vh - 60px) !important;
+  overflow-y: auto !important;
+  box-sizing: border-box !important;
+  transform: translateY(0) !important;
+  /* Let menu inherit original background and border colors naturally */
+}
+
+/* Ensure the topbar has proper z-index to stay above menu */
+.topnav {
+  position: relative !important;
+  z-index: 1000 !important;
+}
+
+/* Ensure menu button is properly positioned */
+.menu-button,
+.hamburger-menu,
+.nav-menu-button,
+.topnav button:not(.theme-toggle) {
+  position: relative !important;
+  z-index: 1001 !important;
+  cursor: pointer !important;
+}
+
+/* Menu content styling */
+.menu-dropdown ul,
+.nav-menu ul,
+.dropdown-menu ul,
+.mobile-menu ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.menu-dropdown a,
+.nav-menu a,
+.dropdown-menu a,
+.mobile-menu a {
+  display: block !important;
+  padding: 1rem 1.5rem !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+}
+
+.descriptionBox {
+  position: absolute;
+  bottom: 10px; /* Adjust position */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-align: center;
+  max-width: 80%;
+}
+
+.descriptionBox a {
+  color: #c9e8ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.descriptionBox a:hover {
+  text-decoration: underline;
+}
+
+
+.footer {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  background-color: var(--bg);
+  padding: 1rem;
+  width: 100%;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.footerCenter {
+  display: flex;
+  gap: 15px; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.footerLogo {
+  height: 40px;
+  width: auto;
+}
+
+.footerText {
+  margin-top: 10px; 
+  color: var(--text);
+}
+
+.languageButton {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.languageButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode specific styles */
+.dark .languageButton {
+  color: white;
+}
+
+.light .languageButton {
+  color: black;
+}
+
+.universityName {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-left: 12px;
+}
+
+.facultyName {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.separator {
+  color: var(--text);
+  margin: 0 10px;
+  opacity: 0.6;
+}
+
+.universityInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 12px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 15px;
+  text-align: center;
+}
+
+/* === MOBILE CHANGES === */
+
+@media (max-width: 620px) {
+  .inputArea {
+    padding: 12px 15px 15px 15px !important;
+    width: 100vw !important;
+    margin: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .inputWrap {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 0.85rem !important;
+    padding: 0.6rem !important;
+    min-height: 36px !important;
+    max-height: 72px !important;
+    box-sizing: border-box !important;
+    border-radius: 10px !important;
+  }
+
+  .recordButton,
+  .generatebutton {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 48px !important;
+    font-size: 12px !important;
+    border-radius: 12px !important;
+    padding: 0.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .userBubble,
+  .botText {
+    max-width: 85% !important;
+    font-size: 0.8rem !important;
+    padding: 8px 12px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 15px !important;
+  }
+
+  .cloud {
+    height: calc(100vh - 55px) !important;
+    width: 100vw !important;
+    padding-top: 55px !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box;
+  }
+
+  .topnav {
+    height: 55px !important;
+    width: 100vw !important;
+    padding: 0.4rem 0.8rem !important;
+    left: 0 !important;
+    box-sizing: border-box;
+    overflow: visible !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    position: fixed !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+  }
+
+  .theme-toggle {
+    width: 45px !important;
+    height: 22px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .slider {
+    width: 45px !important;
+    height: 20px !important;
+    padding: 0 4px !important;
+  }
+
+  .slider::before {
+    height: 14px !important;
+    width: 14px !important;
+    top: 3px !important;
+    left: 3px !important;
+  }
+
+  .theme-toggle input:checked + .slider::before {
+    transform: translateX(22px) !important;
+  }
+
+  .icon {
+    font-size: 10px !important;
+  }
+
+  .apptitle {
+    font-size: 1.8rem !important;
+  }
+
+  .appdescription {
+    font-size: 0.85rem !important;
+    margin: 0.5rem !important;
+  }
+
+  .footer {
+    padding: 0.5rem 15px !important;
+    font-size: 0.65rem !important;
+  }
+
+  .footerLogo {
+    height: 28px !important;
+  }
+
+  .universityName {
+    font-size: 12px !important;
+  }
+
+  .facultyName {
+    font-size: 10px !important;
+  }
+
+  .recordButton span:not(.icon),
+  .generatebutton span:not(.icon) {
+    display: inline !important;
+    font-size: inherit !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+}
+
+
 @media (max-width: 600px) {
   .main {
     padding: 1rem;
@@ -462,6 +1358,9 @@
   }
 
   .topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 1rem 1.5rem;
   }
 
@@ -494,49 +1393,258 @@
   }
 }
 
+@media (max-width: 480px) {
+  .sidebarContent {
+    padding: 12px;
+  }
 
-/* Audio player styling */
-.audioPlayer {
-  max-width: 100%;
-  margin-top: 0.5rem;
-  background: #2a2b2d;
-  border-radius: 16px;
-  padding: 8px;
+  .facultyResource {
+    padding: 12px;
+  }
+
+  .facultyResourceTitle {
+    font-size: 15px;
+  }
+
+  .universityName {
+    font-size: 14px;
+  }
+
+  .facultyName {
+    font-size: 12px;
+  }
+
+  .inputArea {
+    padding: 12px 15px 15px 15px !important;
+    width: 100vw !important;
+    margin: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .inputWrap {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .textarea {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 32px !important;
+    max-height: 64px !important;
+    flex-grow: 1 !important;
+    min-width: 0 !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 1rem !important;
+    border-radius: 12px !important;
+  }
+
+  .inputWrap > .recordButton,
+  .inputWrap > .generatebutton {
+    height: 56px !important;
+    width: 140px !important;
+    font-size: 12px !important;
+    border-radius: 28px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .inputWrap > :not(.textarea) {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .messagelist {
+    padding: 1rem 10px 15px 10px !important;
+  }
+
+  .topnav {
+    height: 55px !important;
+    width: 100vw !important;
+    padding: 0.4rem 0.8rem !important;
+    left: 0 !important;
+    box-sizing: border-box;
+    overflow: visible !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    position: fixed !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+  }
+
+  .menu-button,
+  .hamburger-menu,
+  .nav-menu-button,
+  .topnav button:not(.theme-toggle) {
+    position: relative !important;
+    z-index: 1001 !important;
+    margin-left: auto !important;
+    margin-right: 1rem !important;
+    cursor: pointer !important;
+  }
+
+  .theme-toggle {
+    width: 45px !important;
+    height: 22px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .menu-dropdown,
+  .nav-menu,
+  .dropdown-menu,
+  .mobile-menu,
+  .topnav .dropdown,
+  .topnav .menu-list {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    z-index: 999 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    max-height: calc(100vh - 55px) !important;
+    overflow-y: auto !important;
+    box-sizing: border-box !important;
+    transform: translateY(0) !important;
+  }
+
+  .cloud {
+    height: calc(100vh - 55px) !important;
+    width: 100vw !important;
+    padding-top: 55px !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box;
+  }
+
+  .inputWrap {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .textarea {
+    width: 100% !important;
+    min-height: 40px !important;
+    max-height: 200px !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 1rem !important;
+    border-radius: 12px !important;
+    flex: 2;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;  /* Prevent horizontal growth */
+    resize: none !important;
+    line-height: 1.5;
+    box-sizing: border-box;
+    transition: height 0.2s ease-in-out;
+    white-space: pre-wrap; /* Wrap long lines instead of horizontal scrolling */
+    word-break: break-word;
+  }
+
+  .recordButton,
+  .generatebutton {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 48px !important;
+    font-size: 12px !important;
+    border-radius: 12px !important;
+    padding: 0.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    flex: 1;
+    max-width: 80px;
+  }
 }
 
-.audioPlayer::-webkit-media-controls-panel {
-  background-color: #2a2b2d;
-  border-radius: 16px;
-}
+@media (max-width: 768px) {
+  .inputWrap {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    flex-wrap: nowrap !important;
+  }
 
-.audioPlayer::-webkit-media-controls-play-button,
-.audioPlayer::-webkit-media-controls-mute-button {
-  filter: invert(0.8);
-}
+  .textarea {
+    width: 100% !important;
+    min-height: 40px !important;
+    max-height: 100px !important;
+    box-sizing: border-box !important;
+    flex-grow: 1 !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 1rem !important;
+    border-radius: 12px !important;
+    flex-grow: 1 !important;
+    min-width: 0 !important;
+    max-width: none !important;
+  }
 
-/* Recording indicator */
-.recordingIndicator {
-  margin-top: 8px;
-  color: #ef4444;
-  font-weight: 500;
-  text-align: right;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 6px;
-}
+  .recordButton,
+  .generatebutton {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 48px !important;
+    font-size: 14px !important;
+    border-radius: 12px !important;
+    padding: 0.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
 
-.recordingDot {
-  width: 8px;
-  height: 8px;
-  background-color: #ef4444;
-  border-radius: 50%;
-  animation: pulse 1.5s infinite;
-}
+  .recordButton span:not(.icon),
+  .generatebutton span:not(.icon) {
+    display: inline !important;
+    font-size: inherit !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+  }
 
-@keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.3; }
-  100% { opacity: 1; }
+  @media (max-width: 480px) {
+    .audioPlayer {
+      max-width: 100% !important;
+      width: 100% !important;
+      height: 40px !important;
+      background: #2a2b2d !important;
+      border-radius: 12px !important;
+      padding: 4px !important;
+      box-sizing: border-box !important;
+      display: block !important;
+    }
+
+    .userBubble audio,
+    .botText audio {
+      width: 100% !important;
+      max-width: 100% !important;
+      border-radius: 10px !important;
+    }
+  }
+
 }
