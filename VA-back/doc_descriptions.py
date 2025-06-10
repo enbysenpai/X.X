@@ -191,7 +191,7 @@ DOCUMENT_DESCRIPTIONS = {
         "program": "master",
         "year": "2",
         "courses": ["Ethics and academic integrity", "Professional/Research Practice"],
-        "keywords": ["schedule", "year 2", "MLC", "LC", "MLC1", "LC1", "Computational Linguistics", "courses", "class", "timetable"]
+        "keywords": ["schedule", "year 2", "MLC", "LC", "MLC2", "LC2", "Computational Linguistics", "courses", "class", "timetable"]
     },
 
     "schedule_master_si_year_1.txt":{

@@ -1,44 +1,64 @@
 import os
-import re
+import sys
+import time
 
-from dotenv import load_dotenv
 import pyttsx3
 import speech_recognition as sr
+from dotenv import load_dotenv
 from langchain import hub
+from langchain.chains import ConversationalRetrievalChain
 from langchain.chat_models import init_chat_model
+from langchain.memory import ConversationBufferMemory
 from langchain_chroma import Chroma
+from langchain_community.chat_message_histories import FileChatMessageHistory
 from langchain_community.document_loaders import TextLoader
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain.memory import ConversationBufferMemory
-from langchain_community.chat_message_histories import FileChatMessageHistory
-from langchain.chains import ConversationalRetrievalChain
 
 from doc_descriptions import DOCUMENT_DESCRIPTIONS
 
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
+
 if not api_key:
     raise ValueError("OPENAI_API_KEY is missing in the .env file.")
+
 os.environ["OPENAI_API_KEY"] = api_key
-
-
-llm = init_chat_model("gpt-4o-mini", model_provider="openai", temperature = 0)
+llm = init_chat_model("gpt-4o-mini", model_provider="openai", temperature=0)
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
-
-# vector_store = Chroma(
-#     collection_name="university_data",
-#     embedding_function=embeddings,
-#     persist_directory="./university_info_db",
-# )
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 
 DATA_FOLDER = "data"
+VECTOR_DBS_FOLDER = "vector_dbs"
+
+
+def build_vector_dbs():
+    for filename in os.listdir(DATA_FOLDER):
+        if filename.endswith(".txt"):
+            filepath = os.path.join(DATA_FOLDER, filename)
+            vector_dir = os.path.join(VECTOR_DBS_FOLDER, filename.replace(".txt", ""))
+            if os.path.exists(vector_dir):
+                print(f"[INFO] Vector DB already exists: {filename}")
+                continue
+            loader = TextLoader(filepath, encoding="utf-8")
+            docs = loader.load()
+            splits = text_splitter.split_documents(docs)
+            metadata = DOCUMENT_DESCRIPTIONS.get(filename, {})
+            for doc in splits:
+                doc.metadata = {
+                    "source_file": filename,
+                    **{k: ", ".join(map(str, v)) if isinstance(v, list) else str(v) for k, v in metadata.items()}
+                }
+
+            os.makedirs(vector_dir, exist_ok=True)
+            vector_db = Chroma.from_documents(
+                documents=splits,
+                embedding=embeddings,
+                persist_directory=vector_dir)
+            print(f"[SUCCESS] Created vector DB for: {filename}")
 
 
 def classify_document_by_question(question):
-    """
-    Returns a list of document files based on keywords extracted from the question
-    """
     question = question.lower()
     relevant_files = []
     for filename, metadata in DOCUMENT_DESCRIPTIONS.items():
@@ -46,51 +66,37 @@ def classify_document_by_question(question):
         if any(keyword.lower() in question.lower() for keyword in keywords):
             relevant_files.append(filename)
     if not relevant_files:
-        relevant_files = list(DOCUMENT_DESCRIPTIONS.keys()) # return all files in no keyword found (god help us)
+        relevant_files = list(DOCUMENT_DESCRIPTIONS.keys())  # return all files in no keyword found (god help us)
     return list(set(relevant_files))
 
 
 def create_knowledge_base(embeddings, selected_files):
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1000,
-        chunk_overlap=200
-    )
+    if len(selected_files) == 1:
+        filename = selected_files[0]
+        vector_dir = os.path.join(VECTOR_DBS_FOLDER, filename.replace(".txt", ""))
+        if os.path.exists(vector_dir):
+            print(f"[SYS] Loading existing vector DB for single file: {filename}")
+            return Chroma(persist_directory=vector_dir, embedding_function=embeddings)
 
+        # otherwise, it will create a ChromaDB with all the files found
     all_docs = []
     for filename in selected_files:
         filepath = os.path.join(DATA_FOLDER, filename)
         loader = TextLoader(filepath, encoding="utf-8")
         docs = loader.load()
         splits = text_splitter.split_documents(docs)
-
-        metadata = DOCUMENT_DESCRIPTIONS[filename]
-
-        enhanced_content = f"Document Description: {metadata['description']}\n"
-        enhanced_content += f"Type: {metadata['type']}\n"
-        if metadata['type'] == "schedule":
-            enhanced_content += f"Program: {metadata.get('program', '')}\n"
-            enhanced_content += f"Year: {metadata.get('year', '')}\n"
-            if 'semigroup' in metadata:
-                enhanced_content += f"Semigroup: {metadata.get('semigroup', '')}\n"
-            if 'courses' in metadata:
-                enhanced_content += f"Courses: {', '.join(metadata['courses'])}\n"
-
-        enhanced_content += "\nDOCUMENT CONTENT:\n" + docs[0].page_content
-        # assign the enhanced content and metadata to all splits
+        metadata = DOCUMENT_DESCRIPTIONS.get(filename, {})
         for doc in splits:
             doc.metadata = {
                 "source_file": filename,
                 **{k: ", ".join(map(str, v)) for k, v in metadata.items()}
             }
-            doc.page_content = enhanced_content
-
         all_docs.extend(splits)
     vector_store = Chroma.from_documents(
         documents=all_docs,
         embedding=embeddings,
         collection_name="university_data",
-        persist_directory="./university_info_db"
-    )
+        persist_directory="./university_info_db")
     return vector_store
 
 
@@ -102,8 +108,10 @@ def get_retriever_for_question(question):
 
 
 prompt = hub.pull("rlm/rag-prompt")
+memory = ConversationBufferMemory(memory_key="chat_history",
+                                  chat_memory=FileChatMessageHistory("chat_history.json"),
+                                  return_messages=True)
 
-memory = ConversationBufferMemory(memory_key="chat_history", chat_memory=FileChatMessageHistory("chat_history.json"), return_messages=True)
 
 def speak(text):
     engine = pyttsx3.init()
@@ -142,16 +150,18 @@ def get_answer(question):
     if 'source_documents' in result:
         sources = list({doc.metadata['source_file'] for doc in result['source_documents']})
         answer += f"\n\n(Source: {', '.join(sources)})"
-
     return answer
 
 
-
 if __name__ == "__main__":
-    while(True):
-        question = input("Ask: ").strip()
-        # print(question)
-        print(get_answer(question))
-        print("updated memory: ", memory.load_memory_variables({}))
-
-
+    # build_vector_dbs()
+    try:
+        while (True):
+            question = input("Ask: ").strip()
+            # print(question)
+            # start_time = time.time()
+            print(get_answer(question))
+            # print(f"Execution time: {time.time() - start_time}")
+            print("updated memory: ", memory.load_memory_variables({}))
+    except KeyboardInterrupt:
+        print("[INFO] Shutting down...")
