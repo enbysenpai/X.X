@@ -410,6 +410,560 @@ export default function Home() {
   }
 ];
 
+const imagesLinks = [
+  {
+    id: 1,
+    logo: "/Akademos1.jpg",
+    keywords: ["campus", "campus Akademos", "Akademos campus"]
+  },
+  {
+    id: 2,
+    logo: "/AlexandruIoanCuzaUniversity1.png",
+    keywords: ["Alexandru Ioan Cuza university", "Alexandru Ioan Cuza University", "Universitatea Alexandru Ioan Cuza", "universitatea Alexandru Ioan Cuza", "universitate", "university"]
+  },
+  {
+    id: 3,
+    logo: "/AlexandruIoanCuzaUniversity2.png",
+    keywords: ["Alexandru Ioan Cuza university", "Alexandru Ioan Cuza University", "Universitatea Alexandru Ioan Cuza", "universitatea Alexandru Ioan Cuza", "universitate", "university"]
+  },
+  {
+    id: 4,
+    logo: "/BunaVestire1.jpg",
+    keywords: ["campus", "campus Buna Vestire", "Buna Vestire campus"]
+  },
+  {
+    id: 5,
+    logo: "/BunaVestire2.jpg",
+    keywords: ["campus", "campus Buna Vestire", "Buna Vestire campus"]
+  },
+  {
+    id: 6,
+    logo: "/Codrescu1.jpg",
+    keywords: ["campus", "campus Codrescu", "Codrescu campus"]
+  },
+  {
+    id: 7,
+    logo: "/ErasmusCafeteria1.jpg",
+    keywords: ["Erasmus cafeteria", "cafenea Erasmus", "erasmus cafeteria", "cafenea erasmus", "cafeteria", "cafenea"]
+  },
+  {
+    id: 8,
+    logo: "/ErasmusCafeteria2.jpg",
+    keywords: ["Erasmus cafeteria", "cafenea Erasmus", "erasmus cafeteria", "cafenea erasmus", "cafeteria", "cafenea"]
+  },
+  {
+    id: 9,
+    logo: "/FacultyOfComputerScience1.png",
+    keywords: ["Faculty of Computer Science", "Faculty of computer science", "faculty of computer science", "faculty", "facultate", "Facultatea de Informatică", "Facultatea de Informatica", "Facultatea de informatică", "facultatea de informatică"]
+  },
+  {
+    id: 10,
+    logo: "/Gaudeamus1.jpg",
+    keywords: ["campus", "campus Gaudeamus", "Gaudeamus campus"]
+  },
+  {
+    id: 11,
+    logo: "/GaudeamusCanteen1.jpg",
+    keywords: ["Gaudeamus canteen", "cantina Gaudeamus", "canteen", "cantină"]
+  },
+  {
+    id: 12,
+    logo: "/TargusorCopou1.jpg",
+    keywords: ["Târgușor Copou", "campus Târgușor Copou", "Târgușor Copou campus", "Targusor Copou", "campus Targusor Copou", "Targusor Copou campus"]
+  },
+  {
+    id: 13,
+    logo: "/TituMaiorescuCampus1.jpeg",
+    keywords: ["campus", "Titu Maiorescu campus", "campus Titu Maiorescu"]
+  },
+  {
+    id: 14,
+    logo: "/TituMaiorescuCampus2.jpeg",
+    keywords: ["campus", "Titu Maiorescu campus", "campus Titu Maiorescu"]
+  },
+  {
+    id: 15,
+    logo: "/TituMaiorescuCampus3.jpeg",
+    keywords: ["campus", "Titu Maiorescu campus", "campus Titu Maiorescu"]
+  },
+  {
+    id: 16,
+    logo: "/TituMaiorescuCampus4.jpg",
+    keywords: ["campus", "Titu Maiorescu campus", "campus Titu Maiorescu"]
+  },
+  {
+    id: 17,
+    logo: "/TituMaiorescuCanteen1.jpeg",
+    keywords: ["canteen", "Titu Maiorescu canteen", "cantină", "cantina Titu Maiorescu"]
+  },
+  {
+    id: 18,
+    logo: "/TituMaiorescuCanteen2.jpg",
+    keywords: ["canteen", "Titu Maiorescu canteen", "cantină", "cantina Titu Maiorescu"]
+  },
+]
+
+const mapsLinks = [
+  {
+    id: 1,
+    name: "Akademos campus",
+    mapsLink: "https://www.google.com/maps/place/Akademos/@47.1691284,27.5747013,17z/data=!3m1!4b1!4m6!3m5!1s0x40cafb64ed96f26f:0xfe832f20fd7e01da!8m2!3d47.1691284!4d27.5747013!16s%2Fg%2F1tqcjqp3?entry=ttu&g_ep=EgoyMDI1MDYwOC4wIKXMDSoASAFQAw%3D%3D",
+    keywords: ["campus", "campus Akademos", "Akademos campus"]
+  },
+  {
+    id: 2,
+    name: "Alexandru Ioan Cuza University",
+    mapsLink: "https://www.google.com/maps/place/Universitatea+%E2%80%9EAlexandru+Ioan+Cuza%E2%80%9D/@47.1743589,27.571504,17z/data=!3m1!4b1!4m6!3m5!1s0x40cafb61af5ef507:0x95f1e37c73c23e74!8m2!3d47.1743589!4d27.571504!16zL20vMDk0NXEw?entry=ttu&g_ep=EgoyMDI1MDYwOC4wIKXMDSoASAFQAw%3D%3D",
+    keywords: ["Alexandru Ioan Cuza university", "Alexandru Ioan Cuza University", "Universitatea Alexandru Ioan Cuza", "universitatea Alexandru Ioan Cuza", "universitate", "university"]
+  },
+  {
+    id: 3,
+    name: "Buna Vestire campus",
+    mapsLink: "https://www.google.com/maps/place/Camin+%22Buna+Vestire%22,+Universitatea+A.+I.+Cuza/@47.1621475,27.5811882,17z/data=!3m1!4b1!4m6!3m5!1s0x40cafb7d74b113db:0x3418cd7ed5a56e32!8m2!3d47.1621475!4d27.5811882!16s%2Fg%2F11j48g0srt?entry=ttu&g_ep=EgoyMDI1MDYwOC4wIKXMDSoASAFQAw%3D%3D",
+    keywords: ["campus", "campus Buna Vestire", "Buna Vestire campus"]
+  },
+  {
+    id: 4,
+    name: "Codrescu campus",
+    mapsLink: "https://www.google.com/maps/place/Campus+Codrescu/@47.1771235,27.5551043,14z/data=!4m10!1m2!2m1!1scodrescu!3m6!1s0x40cafc9fcf1c33ef:0x25167f5b9d7cf226!8m2!3d47.1771235!4d27.5726138!15sCghjb2RyZXNjdZIBFnN0dWRlbnRfaG91c2luZ19jZW50ZXKqAT8QASoMIghjb2RyZXNjdSgWMh8QASIbMz6dCs2cctm3wDzdSVGm66b1cf2Y4XXCYcvgMgwQAiIIY29kcmVzY3XgAQA!16s%2Fg%2F1hm36f0yw?entry=ttu&g_ep=EgoyMDI1MDYwOC4wIKXMDSoASAFQAw%3D%3D",
+    keywords: ["campus", "campus Codrescu", "Codrescu campus"]
+  },
+  {
+    id: 5,
+    name: "Erasmus cafeteria",
+    mapsLink: "https://www.google.com/maps/place/Erasmus+Cafe+(La+Balen%C4%83)/@47.1758303,27.5706437,17z/data=!3m1!4b1!4m6!3m5!1s0x40cafb603f1988cb:0x90fceeba026e4e56!8m2!3d47.1758303!4d27.5706437!16s%2Fg%2F1pp2x5sgj?entry=ttu&g_ep=EgoyMDI1MDYwOC4wIKXMDSoASAFQAw%3D%3D",
+    keywords: ["Erasmus cafeteria", "cafenea Erasmus", "erasmus cafeteria", "cafenea erasmus", "cafeteria", "cafenea"]
+  },
+  {
+    id: 6,
+    name: "Faculty of Computer Science",
+    mapsLink: "https://www.google.com/maps/place/Facultatea+de+Informatic%C4%83/@47.1737831,27.5747212,17z/data=!3m1!4b1!4m6!3m5!1s0x40cafb6227e846bd:0x193e4b6864504e2c!8m2!3d47.1737831!4d27.5747212!16s%2Fg%2F1pp2wydwb?entry=ttu&g_ep=EgoyMDI1MDYwOC4wIKXMDSoASAFQAw%3D%3D",
+    keywords: ["Faculty of Computer Science", "Faculty of computer science", "faculty of computer science", "faculty", "facultate", "Facultatea de Informatică", "Facultatea de Informatica", "Facultatea de informatică", "facultatea de informatică"]
+  },
+  {
+    id: 7,
+    name: "Gaudeamus campus",
+    mapsLink: "https://www.google.com/maps/place/C%C4%83minul+de+studen%C8%9Bi+Gaudeamus/@47.1777044,27.5725253,17z/data=!3m1!4b1!4m6!3m5!1s0x40cafc9fc05c488f:0x6904d15a27ccde0b!8m2!3d47.1777044!4d27.5725253!16s%2Fg%2F1ptz4p2c2?entry=ttu&g_ep=EgoyMDI1MDYwOC4wIKXMDSoASAFQAw%3D%3D",
+    keywords: ["campus", "campus Gaudeamus", "Gaudeamus campus"]
+  },
+  {
+    id: 8,
+    name: "Gaudeamus canteen",
+    mapsLink: "https://www.google.com/maps/place/C%C4%83minul+de+studen%C8%9Bi+Gaudeamus/@47.1777044,27.5725253,17z/data=!3m1!4b1!4m6!3m5!1s0x40cafc9fc05c488f:0x6904d15a27ccde0b!8m2!3d47.1777044!4d27.5725253!16s%2Fg%2F1ptz4p2c2?entry=ttu&g_ep=EgoyMDI1MDYwOC4wIKXMDSoASAFQAw%3D%3D",
+    keywords: ["Gaudeamus canteen", "cantina Gaudeamus", "canteen", "cantină"]
+  },
+  {
+    id: 9,
+    name: "Targusor Copou campus",
+    mapsLink: "https://www.google.com/maps/place/Campus+T%C3%A2rgu%C8%99or+Copou/@47.188576,27.561715,17z/data=!4m6!3m5!1s0x40cafcafe6378489:0x10fa553f7a947109!8m2!3d47.1886999!4d27.5631312!16s%2Fg%2F1hm3bvbjm?entry=ttu&g_ep=EgoyMDI1MDYwOC4wIKXMDSoASAFQAw%3D%3D",
+    keywords: ["Târgușor Copou", "campus Târgușor Copou", "Târgușor Copou campus", "Targusor Copou", "campus Targusor Copou", "Targusor Copou campus"]
+  },
+  {
+    id: 10,
+    name: "Titu Maiorescu campus",
+    mapsLink: "https://www.google.com/maps/place/Campus+Titu+Maiorescu/@47.1754484,27.5692032,16.84z/data=!4m6!3m5!1s0x40cafb005ba06131:0x7d8b241b413f4f4f!8m2!3d47.1759135!4d27.5710146!16s%2Fg%2F11ltr1x3mg?entry=ttu&g_ep=EgoyMDI1MDYwOC4wIKXMDSoASAFQAw%3D%3D",
+    keywords: ["campus", "Titu Maiorescu campus", "campus Titu Maiorescu"]
+  },
+  {
+    id: 11,
+    name: "Titu Maiorescu canteen",
+    mapsLink: "https://www.google.com/maps/place/Cantina+Titu+Maiorescu/@47.174586,27.5698253,17z/data=!3m1!4b1!4m6!3m5!1s0x40cafb60f7c6a295:0x33b3c2d5d5a08fe!8m2!3d47.174586!4d27.5698253!16s%2Fg%2F1pp2x66k9?entry=ttu&g_ep=EgoyMDI1MDYwOC4wIKXMDSoASAFQAw%3D%3D",
+    keywords: ["canteen", "Titu Maiorescu canteen", "cantină", "cantina Titu Maiorescu"]
+  }
+]
+
+const GoogleMapsButtons = ({ message = "" }) => {
+  const findRelevantLinks = (message) => {
+    if (!message || typeof message !== 'string') return [];
+    
+    const messageLower = message.toLowerCase();
+    const relevantLinks = [];
+    
+    mapsLinks.forEach(link => {
+      const hasKeyword = link.keywords.some(keyword => 
+        messageLower.includes(keyword.toLowerCase())
+      );
+      
+      if (hasKeyword) {
+        relevantLinks.push(link);
+      }
+    });
+    
+    return relevantLinks;
+  };
+
+  // Get relevant links based on the message
+  const relevantLinks = findRelevantLinks(message);
+
+  // Don't render anything if no relevant links found
+  if (relevantLinks.length === 0) {
+    return null;
+  }
+
+  // Create buttons for relevant links
+  const createMapButtons = () => {
+    return relevantLinks.map((link) => (
+      <a
+        key={link.id}
+        href={link.mapsLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="google-maps-button"
+      >
+        <div className="button-content">
+          <div className="maps-icon">📍</div>
+          <span className="button-text">{link.name}</span>
+        </div>
+      </a>
+    ));
+  };
+
+  return (
+    <div className="maps-buttons-container">
+      {createMapButtons()}
+    </div>
+  );
+};
+
+  const ImageGallery = ({ images, message }) => {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [imageLoadErrors, setImageLoadErrors] = useState({});
+
+  const openModal = (image) => {
+    setSelectedImage(image);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+
+  const handleImageError = (imageId) => {
+    setImageLoadErrors(prev => ({ ...prev, [imageId]: true }));
+  };
+
+  const handleImageLoad = (imageId) => {
+    setImageLoadErrors(prev => ({ ...prev, [imageId]: false }));
+  };
+
+  const styles = {
+    messageContainer: {
+      maxWidth: '800px',
+      margin: '0 auto',
+      padding: '20px'
+    },
+    imageGallery: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: '12px',
+      marginBottom: '20px',
+      alignItems: 'flex-start',
+      marginLeft: '-0px'
+    },
+    imageWrapper: {
+      position: 'relative',
+      width: '180px',
+      height: '180px',
+      borderRadius: '12px',
+      overflow: 'hidden',
+      cursor: 'pointer',
+      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+      background: '#f8f9fa',
+      flexShrink: 0,
+      border: '1px solid #e9ecef'
+    },
+    imageWrapperHover: {
+      transform: 'translateY(-4px)',
+      boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)'
+    },
+    galleryImage: {
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      objectPosition: 'center',
+      transition: 'transform 0.3s ease',
+      background: '#f8f9fa',
+      display: 'block'
+    },
+    imagePlaceholder: {
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+      color: '#6c757d'
+    },
+    placeholderContent: {
+      textAlign: 'center'
+    },
+    placeholderIcon: {
+      display: 'block',
+      fontSize: '32px',
+      marginBottom: '8px'
+    },
+    placeholderText: {
+      margin: 0,
+      fontSize: '12px',
+      fontWeight: 500,
+      maxWidth: '140px',
+      lineHeight: 1.3
+    },
+    imageOverlay: {
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      background: 'linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 70%, transparent 100%)',
+      color: 'white',
+      padding: '16px 12px 12px',
+      transform: 'translateY(100%)',
+      transition: 'transform 0.3s ease'
+    },
+    imageOverlayVisible: {
+      transform: 'translateY(0)'
+    },
+    imageTitle: {
+      fontSize: '12px',
+      fontWeight: 600,
+      lineHeight: 1.3,
+      textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)'
+    },
+    chatbotMessage: {
+      background: '#f8f9fa',
+      padding: '20px',
+      borderRadius: '12px',
+      borderLeft: '4px solid #007bff',
+      fontSize: '16px',
+      lineHeight: 1.6,
+      color: '#333',
+      marginLeft: '0px'
+    },
+    modalOverlay: {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: 'rgba(0, 0, 0, 0.9)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 1000,
+      padding: '20px'
+    },
+    modalContent: {
+      position: 'relative',
+      maxWidth: '90vw',
+      maxHeight: '90vh',
+      background: 'white',
+      borderRadius: '12px',
+      overflow: 'hidden',
+      display: 'flex',
+      flexDirection: 'column'
+    },
+    modalClose: {
+      position: 'absolute',
+      top: '15px',
+      right: '15px',
+      background: 'rgba(0, 0, 0, 0.5)',
+      border: 'none',
+      borderRadius: '50%',
+      width: '40px',
+      height: '40px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      cursor: 'pointer',
+      color: 'white',
+      zIndex: 1001,
+      transition: 'background 0.2s ease'
+    },
+    modalImage: {
+      width: '100%',
+      maxHeight: '60vh',
+      objectFit: 'contain',
+      background: '#f8f9fa'
+    },
+    modalInfo: {
+      padding: '20px'
+    },
+    modalTitle: {
+      margin: '0 0 10px 0',
+      fontSize: '24px',
+      color: '#333'
+    },
+    modalDescription: {
+      margin: 0,
+      color: '#666',
+      lineHeight: 1.6
+    }
+  };
+
+  // Responsive adjustments based on screen size
+  const getResponsiveStyles = () => {
+    const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 1024;
+    
+    if (screenWidth <= 360) {
+      return {
+        imageWrapper: { ...styles.imageWrapper, width: '105px', height: '105px' },
+        imageTitle: { ...styles.imageTitle, fontSize: '8px' },
+        messageContainer: { ...styles.messageContainer, padding: '10px' },
+        imageGallery: { ...styles.imageGallery, gap: '8px' },
+        chatbotMessage: { ...styles.chatbotMessage, fontSize: '14px', padding: '12px' }
+      };
+    } else if (screenWidth <= 480) {
+      return {
+        imageWrapper: { ...styles.imageWrapper, width: '115px', height: '115px' },
+        imageTitle: { ...styles.imageTitle, fontSize: '9px' },
+        messageContainer: { ...styles.messageContainer, padding: '10px' },
+        imageGallery: { ...styles.imageGallery, gap: '8px' },
+        chatbotMessage: { ...styles.chatbotMessage, fontSize: '14px', padding: '12px' }
+      };
+    } else if (screenWidth <= 600) {
+      return {
+        imageWrapper: { ...styles.imageWrapper, width: '125px', height: '125px' },
+        imageTitle: { ...styles.imageTitle, fontSize: '10px' },
+        messageContainer: { ...styles.messageContainer, padding: '15px' },
+        imageGallery: { ...styles.imageGallery, gap: '10px' }
+      };
+    } else if (screenWidth <= 620) {
+      return {
+        imageWrapper: { ...styles.imageWrapper, width: '135px', height: '135px' },
+        imageTitle: { ...styles.imageTitle, fontSize: '10px' },
+        imageGallery: { ...styles.imageGallery, gap: '10px' }
+      };
+    } else if (screenWidth <= 768) {
+      return {
+        imageWrapper: { ...styles.imageWrapper, width: '150px', height: '150px' },
+        imageTitle: { ...styles.imageTitle, fontSize: '11px' },
+        messageContainer: { ...styles.messageContainer, padding: '15px' },
+        chatbotMessage: { ...styles.chatbotMessage, fontSize: '15px', padding: '15px' }
+      };
+    }
+    
+    return {};
+  };
+
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+  
+  React.useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
+
+  const responsiveStyles = getResponsiveStyles();
+  const [hoveredImage, setHoveredImage] = useState(null);
+
+  return (
+    <div style={{ ...styles.messageContainer, ...responsiveStyles.messageContainer }}>
+      {/* Image Gallery - Only show if there are images */}
+      {images && images.length > 0 && (
+        <div style={{ ...styles.imageGallery, ...responsiveStyles.imageGallery }}>
+          {images.map((image, index) => (
+            <div
+              key={image.id || index}
+              style={{
+                ...styles.imageWrapper,
+                ...responsiveStyles.imageWrapper,
+                ...(hoveredImage === image.id ? styles.imageWrapperHover : {})
+              }}
+              onClick={() => openModal(image)}
+              onMouseEnter={() => setHoveredImage(image.id)}
+              onMouseLeave={() => setHoveredImage(null)}
+            >
+              {imageLoadErrors[image.id] ? (
+                <div style={styles.imagePlaceholder}>
+                  <div style={styles.placeholderContent}>
+                    <span style={styles.placeholderIcon}>📷</span>
+                    <p style={styles.placeholderText}>{image.title}</p>
+                  </div>
+                </div>
+              ) : (
+                <img
+                  src={image.logo}
+                  alt={image.title}
+                  style={{
+                    ...styles.galleryImage,
+                    ...(hoveredImage === image.id ? { transform: 'scale(1.05)' } : {})
+                  }}
+                  onError={() => handleImageError(image.id)}
+                  onLoad={() => handleImageLoad(image.id)}
+                />
+              )}
+              <div style={{
+                ...styles.imageOverlay,
+                ...(hoveredImage === image.id ? styles.imageOverlayVisible : {})
+              }}>
+                <div style={{ ...styles.imageTitle, ...responsiveStyles.imageTitle }}>
+                  {image.title}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Modal */}
+      {selectedImage && (
+        <div style={styles.modalOverlay} onClick={closeModal}>
+          <div style={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <button 
+              style={styles.modalClose} 
+              onClick={closeModal}
+              onMouseEnter={(e) => e.target.style.background = 'rgba(0, 0, 0, 0.7)'}
+              onMouseLeave={(e) => e.target.style.background = 'rgba(0, 0, 0, 0.5)'}
+            >
+              <X size={24} />
+            </button>
+            {imageLoadErrors[selectedImage.id] ? (
+              <div style={{
+                width: '100%',
+                height: '300px',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: '#f8f9fa',
+                color: '#6c757d'
+              }}>
+                <span style={{ fontSize: '48px', marginBottom: '16px' }}>📷</span>
+                <p>Image could not be loaded</p>
+              </div>
+            ) : (
+              <img
+                src={selectedImage.logo}
+                style={styles.modalImage}
+                onError={() => handleImageError(selectedImage.id)}
+              />
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+  const getMatchingImages = (message, facultyLinks) => {
+    if (!message || !facultyLinks) return [];
+    
+    const messageLower = message.toLowerCase();
+    const matchingImages = [];
+    
+    facultyLinks.forEach(link => {
+      const hasMatch = link.keywords.some(keyword => 
+        messageLower.includes(keyword.toLowerCase())
+      );
+      if (hasMatch) {
+        matchingImages.push(link);
+      }
+    });
+    
+    return matchingImages;
+  };
+
   const filteredLinks = (message) => {
     if(message.length) {
       const messageLower = message.toLowerCase();
@@ -982,19 +1536,32 @@ export default function Home() {
                   </div>
                 </div>
 
-                  <footer className={styles.footer}>
-                    <div className={styles.footerCenter}>
+                <footer className={styles.footer}>
+                  <div className={styles.footerLogos}>
+                    <div className={styles.logoContainer}>
                       <img src="/logo_uaic.png" alt="Logo 1" className={styles.footerLogo} />
                       <span className={styles.universityName}>"Alexandru Ioan Cuza" University of Iași</span>
                     </div>
-                    <div className={styles.footerText}>
-                      <p>{t.footer.aboutUs}</p>
-                      <p>{t.footer.contact}: fiihelpuaicassistant@gmail.com</p>
+                    <div className={styles.logoContainer}>
+                      <img src="/logo_faculty.png" alt="Logo 2" className={styles.footerLogo} />
+                      <span className={styles.facultyName}>Faculty of Computer Science</span>
                     </div>
-                  </footer>
+                  </div>
+                  <div className={styles.footerText}>
+                    <p>{t.footer.aboutUs}</p>
+                    <p>{t.footer.contact}: fiihelpuaicassistant@gmail.com</p>
+                  </div>
+                </footer>
                 </div>
               ) : (
                 messages.reduce((acc, message, index) => {
+                  if(message.type === "apiMessage" && getMatchingImages(message.message, imagesLinks).length > 0) {
+                      acc.push(
+                          <ImageGallery
+                            images={getMatchingImages(message.message, imagesLinks)}
+                          />
+                      );
+                  }
                   acc.push(
                   <div 
                      key={index}
@@ -1030,7 +1597,11 @@ export default function Home() {
                         </div>
                       );
                     }
-
+                        if(message.type === "apiMessage") {
+                          acc.push(
+                              <GoogleMapsButtons message={message.message} />
+                          );
+                        }
                     return acc;
                  }, []) 
                 )

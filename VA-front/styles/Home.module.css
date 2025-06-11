@@ -1192,6 +1192,141 @@
   text-align: center;
 }
 
+.maps-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.google-maps-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  background-color: #4285f4;
+  color: white;
+  text-decoration: none;
+  border-radius: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 44px;
+  white-space: nowrap;
+}
+
+.google-maps-button:hover {
+  background-color: #3367d6;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.google-maps-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.maps-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.button-text {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.chatbot-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.chat-response {
+  background-color: #f8f9fa;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  border-left: 4px solid #4285f4;
+}
+
+.chat-response p {
+  margin: 0;
+  line-height: 1.5;
+  color: #333;
+}
+
+.chat-example {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.chat-example:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.footer {
+  padding: 2rem 1rem;
+}
+
+.footerLogos {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 300px;
+}
+
+.footerLogo {
+  width: auto;
+  height: 80px;
+  max-width: 100%;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.universityName,
+.facultyName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000 !important;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.footerText {
+  text-align: center;
+  color: #000;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footerText p {
+  margin: 0.5rem 0;
+}
+
 /* === MOBILE CHANGES === */
 
 @media (max-width: 620px) {
@@ -1337,6 +1472,42 @@
     overflow: hidden !important;
     text-overflow: ellipsis !important;
   }
+
+  .maps-buttons-container {
+    gap: 8px;
+  }
+  
+  .google-maps-button {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 16px;
+  }
+  
+  .chatbot-container {
+    padding: 12px;
+  }
+
+  .footer {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .footerLogos {
+    gap: 1.5rem;
+  }
+  
+  .footerLogo {
+    height: 60px;
+  }
+  
+  .universityName,
+  .facultyName {
+    font-size: 0.9rem;
+  }
+  
+  .footerText {
+    font-size: 0.85rem;
+  }
+
 }
 
 
@@ -1391,6 +1562,35 @@
   .markdownanswer code {
     white-space: pre-wrap !important;
   }
+
+  .google-maps-button {
+    padding: 10px 12px;
+    font-size: 12px;
+    border-radius: 18px;
+  }
+  
+  .button-text {
+    font-size: 12px;
+  }
+  
+  .maps-icon {
+    font-size: 13px;
+  }
+  
+  .button-content {
+    gap: 6px;
+  }
+
+  .footerLogos {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .logoContainer {
+    max-width: 280px;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -1574,6 +1774,82 @@
     flex: 1;
     max-width: 80px;
   }
+
+  .audioPlayer {
+      max-width: 100% !important;
+      width: 100% !important;
+      height: 40px !important;
+      background: #2a2b2d !important;
+      border-radius: 12px !important;
+      padding: 4px !important;
+      box-sizing: border-box !important;
+      display: block !important;
+    }
+
+    .userBubble audio,
+    .botText audio {
+      width: 100% !important;
+      max-width: 100% !important;
+      border-radius: 10px !important;
+    }
+
+   .google-maps-button {
+    padding: 8px 12px;
+    font-size: 11px;
+    border-radius: 16px;
+    min-height: 40px;
+  }
+  
+  .button-text {
+    font-size: 11px;
+  }
+  
+  .maps-icon {
+    font-size: 12px;
+  }
+  
+  .button-content {
+    gap: 5px;
+  }
+  
+  .chatbot-container {
+    padding: 8px;
+  }
+  
+  .chat-response {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .footer {
+    padding: 1rem 0.5rem;
+  }
+  
+  .footerLogos {
+    gap: 1.5rem;
+  }
+  
+  .logoContainer {
+    max-width: 250px;
+  }
+  
+  .footerLogo {
+    height: 50px;
+  }
+  
+  .universityName,
+  .facultyName {
+    font-size: 0.85rem;
+  }
+  
+  .footerText {
+    font-size: 0.8rem;
+  }
+  
+  .footerText p {
+    margin: 0.25rem 0;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -1627,24 +1903,39 @@
     text-overflow: ellipsis !important;
   }
 
-  @media (max-width: 480px) {
-    .audioPlayer {
-      max-width: 100% !important;
-      width: 100% !important;
-      height: 40px !important;
-      background: #2a2b2d !important;
-      border-radius: 12px !important;
-      padding: 4px !important;
-      box-sizing: border-box !important;
-      display: block !important;
-    }
-
-    .userBubble audio,
-    .botText audio {
-      width: 100% !important;
-      max-width: 100% !important;
-      border-radius: 10px !important;
-    }
+  .maps-buttons-container {
+    gap: 10px;
+    margin-top: 12px;
+  }
+  
+  .google-maps-button {
+    padding: 10px 14px;
+    font-size: 13px;
+    border-radius: 20px;
+  }
+  
+  .button-text {
+    font-size: 13px;
+  }
+  
+  .maps-icon {
+    font-size: 14px;
+  }
+  
+  .chatbot-container {
+    padding: 16px;
   }
 
+  .footerLogos {
+    gap: 2rem;
+  }
+  
+  .footerLogo {
+    height: 70px;
+  }
+  
+  .universityName,
+  .facultyName {
+    font-size: 0.95rem;
+  }
 }
